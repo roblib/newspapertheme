@@ -1,0 +1,62 @@
+@import "aether-components";
+
+// Sassy Form defaults
+// These are the base defaults for the buttons, if you are going to use similar buttons on an entire site,
+// overriding these can save you some time by calling the sassy button mixin with less arguments.
+
+// Base color of form fields.
+$sf-base-color: white !default;
+
+// Optional secondary color for hover state.
+$sf-second-color: false !default;
+
+// Optional third color for focus state.
+$sf-third-color: false !default;
+
+// Optional color for focus glow, false for none.
+$sf-glow-color: #0066FF !default;
+
+// Optional color for HTML5 placeholder text
+$sf-placeholder-color: false !default;
+
+// Border radius of form.
+$sf-border-radius: 3px !default;
+
+// Padding that gives form structure.
+$sf-padding: 0.25em 2px !default;
+
+// Font size.
+$sf-font-size: 16px !default;
+
+// form font color.
+$sf-text-color: #222 !default;
+
+// Style of form text, can be "inset" or "raised" or false.
+$sf-text-style: "false" !default;
+
+// Style of borders, can be "flat", "simple", "standard", "innerborder".
+$sf-border-style: "simple" !default;
+
+// Automatically generate pseudo state styles.
+$sf-pseudo-states: true !default;
+
+// Add gradient png for IE 7+
+$sf-ie-support: true !default;
+
+//  Mixin that gets included when calling the sassy-button-structure if you need any
+//  styles applied to all your sassy buttons, add it here.
+
+@mixin sassy-form-default-structure {
+  @include background-clip(padding-box);
+  -webkit-appearance: none;
+  vertical-align: middle;
+  outline: 0;
+  text-align: left;
+}
+
+//  *    Mixin reference
+//  *   -----------------------------------------
+//  *   @include sassy-form($border-style, $border-radius, $font-size, $first-color, $second-color, $third-color, $glow-color, $text-color, $text-style, $auto-states, $ie);
+//  *   @include sassy-form-structure($border-radius, $font-size, $padding);
+//  *   @include sassy-form-border-style($style, $base-color, $second-color, $third-color, $glow-color, $text-color, $text-style, $auto-states, $ie) {
+

@@ -1,0 +1,11 @@
+// Mixin that controls the text style
+@mixin aether-message-text($base-color: $am-base-color, $light-text: $am-light-text, $dark-text: $am-dark-text) {
+  @if lightness($base-color) <= lightness(#999) {
+    @include single-text-shadow(rgba(0, 0, 0, 0.25), 0, -1px, 0);
+    color: $light-text;
+  }
+  @else {
+    @include single-text-shadow(rgba(255, 255, 255, 0.5), 0, 1px, 0); 
+    color: $dark-text;
+  }
+}

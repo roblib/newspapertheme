@@ -1,0 +1,76 @@
+/*
+ * ==================================================
+ * Page
+ * 
+ * Styling for elements found in page.tpl.php
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+/* Vertical Rhythm */
+
+// Add and/or remove page elements as your grid needs. 
+
+.header-inner,
+.main-menu-inner,
+.navigation-inner,
+.preface-inner,
+.feature-inner,
+.content-inner,
+.postscript-inner,
+.sidebar-inner,
+.footer-inner {
+  @include margin-trailer(1, $base-font-size);
+}
+
+// Skip link is hidden until it's tabbed to.
+#skip-link {
+  margin: 0;
+
+  a,
+  a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+  }
+}
+
+/* Header */
+
+.name-and-slogan {
+  @include center-vertically;
+  .ie7 & {
+    @include float(left);
+  }
+}
+
+.logo {
+  @include center-vertically;
+  padding: 0 10px 0 0;
+    .ie7 & {
+      @include float(left);
+    }
+}
+
+.site-name {
+  @include adjust-font-size-to($font-size-xxl,1);
+  @include margin-leader(0);
+  @include margin-trailer(0.31, $font-size-xxl);
+  font-family: $header-font-family;
+  font-weight: bold;
+  a {
+    @include link-colors($text-color, $hover: $text-color, $focus: $text-color, $visited: $text-color, $active: $text-color);
+    text-decoration: none;
+  }
+}
+
+.site-slogan {
+  @include adjust-font-size-to($font-size-xl,1);
+}

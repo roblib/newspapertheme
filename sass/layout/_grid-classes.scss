@@ -1,0 +1,27 @@
+@import "../variables";
+
+$aether-break: $break-wide !default;
+$aether-constraint: false !default;
+$aether-grid-numbers-top: false !default;
+
+// A wrapper for aether-grids class mixin
+@mixin aether-grid-classes($rtl: ltr) {
+
+  // Grid container and grid background.
+  .#{$aether-gridprefix}-all-row {
+    @include container($aether-break, $aether-constraint);
+    @include aether-grid-background;
+    body.toolbar & {
+      &:first-child:before {
+        @include container($aether-break, $aether-constraint);
+        @include aether-grid-background-numbers($aether-columns, $aether-grid-width, $aether-grid-numbers-top);
+      }
+    }
+    .#{$aether-gridprefix}-all-row {
+      @include nested-container;
+    }
+  }
+
+  // Generate column classes for handheld media
+  @include grid-classes($rtl);
+}

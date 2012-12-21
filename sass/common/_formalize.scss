@@ -1,0 +1,168 @@
+/*
+ * ==================================================
+ * Formalize
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+// Addresses font-family inconsistency between 'textarea' and other form elements.
+
+// Corrects margin displayed oddly in IE6/7.
+form {
+  margin: 0;
+}
+
+// Aligns checkbox text to middle of checkbox.
+input.form-checkbox,
+input.form-radio {
+  vertical-align: middle;
+}
+
+/* UI Consistency */
+
+label,
+input,
+button {
+  // Reset firefox form styling
+  &::-moz-focus-inner {border:0;padding:0;margin:0;}
+  // Ensure all form elements are the same box-model
+  @include box-sizing(content-box);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  &.option {
+    display: inline;
+    font-weight: normal;
+    vertical-align: middle;
+  }
+}
+
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+// iPad
+@media (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
+  input[type="radio"],
+  input[type="checkbox"] {
+    vertical-align: baseline;
+    top: 2px;
+  }
+}
+
+// iPad 3
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 1024px) {
+  input[type="radio"],
+  input[type="checkbox"] {
+    vertical-align: baseline;
+    top: 2px;
+  }
+}
+
+// iPhone 3
+@media (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 480px) {
+  input[type="radio"],
+  input[type="checkbox"] {
+    vertical-align: baseline;
+    top: 0;
+  }
+}
+
+// iPhone 4
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 480px) {
+  input[type="radio"],
+  input[type="checkbox"] {
+    vertical-align: baseline;
+    top: 0;
+  }
+}
+
+// Reset height since textareas have rows
+textarea {
+  height: auto;
+  min-height: 40px;
+  overflow: auto;
+  resize: vertical;
+}
+
+optgroup {
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+}
+
+// Reset width of input buttons, radios, checkboxes
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto; // Override of generic input selector
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  vertical-align: middle;
+}
+
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  &:focus,
+  &:active {
+    @include box-shadow(none);
+  }
+}
+
+textarea,
+select[size],
+select[multiple] {
+  height: auto;
+}
+
+// Tweaks for Safari + Chrome.
+@media (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    background-image: image-url("select_arrow.gif");
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: $typographic-indent;
+  }
+  select[size],
+  select[multiple] {
+    background-image: none;
+    padding: 0;
+  }
+
+  ::-webkit-validation-bubble-message {
+    -webkit-box-shadow: rgba(black, 0.5) 0 0 5px 0;
+    box-shadow: rgba(black, 0.5) 0 0 5px 0;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666666), color-stop(1, black));
+    border: 1px solid;
+    border-color: #ccc;
+    color: white;
+    font-family: $input-font-family;
+    @include adjust-font-size-to($font-size-sm,1);
+    height: 16px;
+    overflow: hidden;
+    padding: 15px 15px 17px;
+    @include text-shadow(rgba(black, 0) 0 0 1px);
+  }
+  ::-webkit-validation-bubble-arrow,
+  ::-webkit-validation-bubble-top-outer-arrow,
+  ::-webkit-validation-bubble-top-inner-arrow {
+    -webkit-box-shadow: none;
+    background: #666666;
+    border: 0;
+    box-shadow: none;
+  }
+}

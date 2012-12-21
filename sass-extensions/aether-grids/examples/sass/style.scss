@@ -1,0 +1,39 @@
+@import 'base';
+
+.demo-container {
+    @include margin-trailer(1, $base-font-size);
+    background-color: #afafaf;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    white-space: nowrap;
+    height: 1.38462em;
+}
+
+article.demo-container {
+    background-color: #71DAD2;
+}
+
+aside.demo-container {
+    background-color: #F09671;
+}
+
+aside:last-child {
+  background-color: #EE9E9C;
+}
+
+.clearfix {
+  // Micro clearfix
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+    // IE6
+    @if $legacy-support-for-ie6 {
+      .ie6 & {
+        *zoom: 1;
+      }
+    }
+}

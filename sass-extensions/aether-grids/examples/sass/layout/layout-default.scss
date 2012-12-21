@@ -1,0 +1,26 @@
+@import "../base";
+
+$aether-grid-type: $aether-grid-type-desktop;
+$aether-columns: $aether-columns-desktop;
+$aether-grid-width: $aether-grid-width-desktop;
+
+html { 
+  overflow:auto; 
+  overflow-x:hidden;
+}
+
+// Grid container and grid background.
+.g-all-row {
+  @include container($aether-break-wide, max);
+  @include aether-grid-background;
+  &:first-child:before {
+    @include aether-grid-background-numbers($aether-columns-desktop, $aether-grid-width-desktop);
+    @include container($aether-break-wide, max);
+  }
+}
+
+// Generate column classes for desktop media
+@include grid-classes(ltr, default);
+
+// The extend-layout partial must be imported into both default layout and media queries stylesheets
+@import "extend-layout";

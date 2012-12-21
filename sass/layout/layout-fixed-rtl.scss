@@ -1,0 +1,14 @@
+// Import your base variables here to set vertical rhythm and for overrides.
+@import '../variables';
+
+$aether-grid-type: fixed;
+$aether-float-direction: right;
+$aether-break: $break-wide;
+$aether-columns: $aether-columns-desktop;
+$aether-grid-width: $aether-grid-width-desktop;
+$aether-media: $aether-media-desktop;
+
+@include grid-classes(rtl);
+
+// The extend-layout partial must be imported into both default layout and media queries stylesheets
+@import "extend-layout";

@@ -1,0 +1,77 @@
+// Aether Buttons
+// Adapted from a Compass extension by Jared Hardy - http://www.jaredhardy.com
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import "compass/css3/images";
+
+@import "buttons/gradients";
+@import "buttons/styles";
+@import "buttons/text";
+@import "buttons/pseudo-states";
+
+// Aether Button defaults
+// These are the base defaults for the buttons, if you are going to use similar
+// buttons on an entire site changing these can save you some time by calling 
+// the aether button mixin with less arguments.
+
+// Base color of button.
+$ab-base-color: rgba(11, 153, 194, 1) !default;
+
+// Optional secondary color for gradient.
+$ab-second-color: false !default;
+
+// Border radius of button.
+$ab-border-radius: 5px !default;
+
+// Padding that gives button structure.
+$ab-padding: 0.5em 1.5em !default;
+
+// Font size.
+$ab-font-size: 16px !default;
+
+// Button font color.
+$ab-text-color: white !default;
+
+// Style of button text, can be "inset" or "raised" or false.
+$ab-text-style: "inset" !default;
+
+// Gradient style of button, can be "flat", "glass", "matte", "shiny", or "simple".
+$ab-gradient-style: "simple" !default;
+
+// Automatically generate pseudo state styles.
+$ab-pseudo-states: true !default;
+
+// Add gradient png for IE 7+
+$ab-ie-support: true !default;
+
+// Mixin that gets included when calling the aether-button-structure if you
+// need any styles applied to all your sassy buttons, add it here.
+@mixin aether-button-default-structure {
+  display: inline-block;
+  cursor: pointer;
+}
+
+// The Sassy Button kitchen sink.
+@mixin aether-button($gradient-style: $ab-gradient-style, $border-radius: $ab-border-radius, $font-size: $ab-font-size, $first-color: $ab-base-color, $second-color: $ab-second-color, $text-color: $ab-text-color, $text-style: $ab-text-style, $padding: $ab-padding, $auto-states: $ab-pseudo-states, $ie: $ab-ie-support) {
+  @include aether-button-structure($border-radius, $font-size, $padding);
+  @include aether-button-gradient($gradient-style, $first-color, $second-color, $text-color, $text-style, $auto-states, $ie);
+  @include aether-button-firefox-fix;
+}
+
+// Structure for a sassy button.
+@mixin aether-button-structure($border-radius: $ab-border-radius, $font-size: $ab-font-size, $padding: $ab-padding) {
+  font-size: $font-size;
+  padding: $padding;
+  @include aether-button-default-structure;
+  @include border-radius($border-radius);
+}
+
+// Fix for the Firefox padding issue.
+@mixin aether-button-firefox-fix {
+  &::-moz-focus-inner {
+    padding: 0 !important;
+    margin: -1px !important;
+  }
+}

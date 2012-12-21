@@ -1,0 +1,47 @@
+// Mixin that generates :hover, :active, and disabled psuedo states
+
+@mixin aether-form-pseudo-states($first-color, $second-color, $third-color, $glow-color, $style) {
+  @include aether-form-hover($first-color, $second-color, $third-color, $glow-color, $style);
+  &.disabled, &[disabled] {
+    @include box-shadow(none);
+    color: darken($first-color, 5%);
+    background-color: darken($first-color, 5%);
+    cursor: default;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+  }
+  @if $sf-placeholder-color {
+    color: $sf-placeholder-color;
+  } @else {
+    &:-moz-placeholder {
+      color: darken($first-color, 25%);
+    }
+    ::-webkit-input-placeholder & {
+      color: darken($first-color, 25%);
+    }
+  }
+  &:invalid, &.error {
+    @include box-shadow(none);
+    border: 1px solid red;
+  }
+}
+
+@mixin aether-form-hover($first-color, $second-color, $third-color, $glow-color, $style) {
+  &:hover {
+    background-color: $second-color;
+    text-decoration: none;
+  }
+  &:focus {
+    background-color: $third-color;
+    @include aether-form-focus-shadow($glow-color);
+  }
+  @if $style == "innerborder" {
+    &:hover {
+      border-color: darken($second-color, 15%);
+    }
+    &:focus {
+      border-color: darken($third-color, 15%);
+    }
+  }
+}

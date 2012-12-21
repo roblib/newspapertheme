@@ -1,0 +1,171 @@
+/*
+ * ==================================================
+ * Global States
+ * 
+ * A state augments and overrides all other styles.
+ * https://smacss.com/book/type-state
+ * ==================================================
+ */
+
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+
+#autocomplete .selected { /* Suggestion list */
+  background: #0072b9;
+  color: #fff;
+}
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+
+.fieldset-legend {
+  html.js .collapsible & {
+    background-image: inline-image("menu-expanded.png");
+    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+      *background-image: url(../images/menu-expanded.png);
+    }
+    background-position: 5px 65%; /* LTR */
+    background-repeat: no-repeat;
+    padding-left: 15px; /* LTR */
+  }
+  html.js .collapsed & {
+    background-image: inline-image("menu-collapsed.png"); /* LTR */
+    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+      *background-image: url(../images/menu-collapsed.png); /* LTR */
+    }
+    background-position: 5px 50%; /* LTR */
+  }
+
+  .summary {
+    color: #999;
+    font-size: 0.9em;
+    margin-left: 0.5em;
+  }
+}
+
+/**
+ * TableDrag behavior.
+ *
+ * @see tabledrag.js
+ */
+
+tr.drag {
+  background-color: #fffff0;
+}
+
+tr.drag-previous {
+  background-color: #ffd;
+}
+
+.tabledrag-toggle-weight {
+  font-size: 0.9em;
+}
+
+/**
+ * TableSelect behavior.
+ *
+ * @see tableselect.js
+ */
+
+tr.selected td {
+  background: #ffc;
+}
+
+/**
+ * Progress bar.
+ *
+ * @see progress.js
+ */
+
+// Add the base meter styles.
+.progress .bar {
+  @include aether-meter($bar-selector: '.filled', $meter-color: #0E90D2);
+}
+
+// Trigger the animation.
+@include aether-meter-animate;
+
+
+/* Override system.base.css to adjust throbber position */
+
+html.js input.form-autocomplete {
+    background-position: 100% 6px;
+}
+
+html.js input.throbbing {
+    background-position: 100% -13px;
+}
+
+/* Wireframes */
+
+// Only shown when enabled in debugging section of theme-settings.
+
+.with-wireframes {
+  .user-columns-wrapper,
+  .branding-wrapper,
+  .header-columns-wrapper,
+  .navigation-columns-wrapper,
+  .feature-wrapper,
+  .preface-wrapper,
+  .content-wrapper,
+  .postscript-wrapper,
+  .footer-columns-wrapper,
+  .footer-wrapper {
+    outline: 1px solid #ddd;
+  }
+  .user-inner,
+  .header-inner,
+  .branding-inner,
+  .main-menu-inner,
+  .navigation-inner,
+  .preface-inner,
+  .feature-inner,
+  .content-inner,
+  .postscript-inner,
+  .sidebar-inner,
+  .footer-inner {
+    outline: 1px solid #666;
+  }
+  .g-all-row {
+    outline: 1px solid #ccc;
+  }
+  .block {
+    outline: 1px solid #aaa;
+  }
+}
+
+/* Overlay */
+
+.overlay #header,
+.overlay #navigation {
+  display: none;
+}
+
+/* Unpublished */
+
+// The word "Unpublished" displayed underneath the content.
+p.unpublished {
+  height: 0;
+  overflow: visible;
+  color: #d8d8d8;
+  font-size: 75px;
+  line-height: 1;
+  font-family: $mono-font-family;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word;
+}
+@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+  .lt-ie8 .node-unpublished>*,
+  .lt-ie8 .comment-unpublished>* {
+    // Otherwise these elements will appear below the "Unpublished" text.
+    position: relative;
+  }
+}

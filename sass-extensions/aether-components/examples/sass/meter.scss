@@ -1,0 +1,64 @@
+@import 'base';
+@import 'aether-components';
+
+/* Added for demo purposes */
+
+.container {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.meter, .meter-slim,  {
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+}
+
+/* Usage examples start here */
+
+// Exclude color, stripes and animation from the meter mixin
+// to reduce code bloat with multiple meters.
+// If animation is used, stripes are enabled automatically.
+$apm-auto-include-meter-color: false;
+$apm-auto-include-meter-stripes: false;
+$apm-auto-include-meter-animate: false;
+
+.stripes {
+  @include aether-meter-stripes;
+}
+
+// Add grey meter mixin to a selector
+.meter {
+  @include aether-meter($base-color: #555, $border-radius: 25px, $padding: 10px);
+  .animate {
+    @include aether-meter-animation('big');
+  }
+  .red {
+    @include aether-meter-color(#f42323, $meter-left-radius: 20px, $meter-right-radius: 8px);
+  }
+  .blue {
+    @include aether-meter-color(#f42323, $meter-left-radius: 20px, $meter-right-radius: 8px);
+  }
+}
+
+// Trigger the animation name and direction
+@include aether-meter-animate('big', right);
+
+.meter-slim {
+  @include aether-meter('slim',$base-color: #ebebeb);
+  .animate {
+    @include aether-meter-animation('slim');
+  }
+  .blue {
+    @include aether-meter-color(#0E90D2);
+  }
+  .pink {
+    @include aether-meter-color(#FF00D0);
+  }
+  .purple {
+    @include aether-meter-color(#B300FF);
+  }
+}
+
+// Trigger the animation in reverse
+@include aether-meter-animate('slim', left);

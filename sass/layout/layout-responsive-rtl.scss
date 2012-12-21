@@ -1,0 +1,58 @@
+// Import your base variables here to set vertical rhythm and for overrides.
+@import '../variables';
+@import "grid-classes";
+
+$aether-float-direction: right;
+
+/* Handheld */
+@include breakpoint($break-handheld) {
+  $aether-grid-type: $aether-grid-type-handheld;
+  $aether-columns: $aether-columns-handheld;
+  $aether-grid-width: $aether-grid-width-handheld;
+  $aether-media: $aether-media-handheld;
+
+  @include aether-grid-classes(rtl);
+}
+
+/* Handheld Landscape */
+@include breakpoint($break-handheld-landscape) {
+  $aether-grid-type: $aether-grid-type-handheld-landscape;
+  $aether-columns: $aether-columns-handheld;
+  $aether-grid-width: $aether-grid-width-handheld-landscape;
+  $aether-media: $aether-media-handheld-landscape;
+
+  @include aether-grid-classes(rtl);
+}
+
+/* Tablet */
+@include breakpoint($break-tablet)  {
+  $aether-grid-type: $aether-grid-type-tablet;
+  $aether-columns: $aether-columns-tablet;
+  $aether-grid-width: $aether-grid-width-tablet;
+  $aether-media: $aether-media-tablet;
+
+  @include aether-grid-classes(rtl);
+}
+
+/* Tablet Landscape */
+@include breakpoint($break-tablet-landscape) {
+  $aether-grid-type: $aether-grid-type-tablet-landscape;
+  $aether-columns: $aether-columns-tablet;
+  $aether-grid-width: $aether-grid-width-tablet-landscape;
+  $aether-media: $aether-media-tablet-landscape;
+
+  @include aether-grid-classes(rtl);
+}
+
+/* Desktop */
+@include breakpoint($break-desktop) {
+  $aether-grid-type: $aether-grid-type-desktop;
+  $aether-columns: $aether-columns-desktop;
+  $aether-grid-width: $aether-grid-width-desktop;
+  $aether-media: $aether-media-desktop;
+
+  @include aether-grid-classes(rtl);
+}
+
+@import "layout-ie-rtl";
+@import "extend-layout";

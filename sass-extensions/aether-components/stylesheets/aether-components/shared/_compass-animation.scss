@@ -1,0 +1,76 @@
+@mixin animation($animation-1: default, $animation-2: false, $animation-3: false, $animation-4: false, $animation-5: false, $animation-6: false, $animation-7: false, $animation-8: false, $animation-9: false, $animation-10: false) {
+  @if $animation-1 == default {
+    $animation-1: -compass-space-list(compact($default-animation-name, $default-animation-duration, $default-animation-timing-function, $default-animation-delay, $default-animation-iteration-count, $default-animation-direction, $default-animation-fill-mode, $default-animation-play-state)); }
+  $animation: compact($animation-1, $animation-2, $animation-3, $animation-4, $animation-5, $animation-6, $animation-7, $animation-8, $animation-9, $animation-10);
+  @include animation-support(animation, $animation); }
+
+@mixin animation-support($property, $value) {
+  @include experimental($property, $value, -moz, -webkit, -o, -ms, not -khtml, official); }
+
+// Create a named animation sequence that can be applied to elements later.
+//
+// $name - The name of your animation.
+// @content - The keyframes of the animation.
+@mixin keyframes(
+  $name,
+  $moz: $experimental-support-for-mozilla,
+  $webkit: $experimental-support-for-webkit,
+  $o: $experimental-support-for-opera,
+  $ms: $experimental-support-for-microsoft,
+  $khtml: $experimental-support-for-khtml,
+  $official: true
+) {
+  @if $moz {
+    @include with-only-support-for($moz: true) {
+      @-moz-keyframes #{$name} { @content; }
+    }
+  }
+  @if $webkit {
+    @include with-only-support-for($webkit: true) {
+      @-webkit-keyframes #{$name} { @content; }
+    }
+  }
+  @if $o {
+    @include with-only-support-for($o: true) {
+      @-o-keyframes #{$name} { @content; }
+    }
+  }
+  @if $ms {
+    @include with-only-support-for($ms: true) {
+      @-ms-keyframes #{$name} { @content; }
+    }
+  }
+  @if $khtml {
+    @include with-only-support-for($khtml: true) {
+      @-khtml-keyframes #{$name} { @content; }
+    }
+  }
+  @if $official {
+    @include with-only-support-for {
+      @keyframes #{$name} { @content; }
+    }
+  }
+}
+
+@mixin set-experimental-support($moz: false, $webkit: false, $ms: false, $o: false, $khtml: false) {
+  $experimental-support-for-mozilla: $moz;
+  $experimental-support-for-webkit: $webkit;
+  $experimental-support-for-microsoft: $ms;
+  $experimental-support-for-opera: $o;
+  $experimental-support-for-khtml: $khtml;
+}
+
+@mixin with-only-support-for($moz: false, $webkit: false, $ms: false, $o: false, $khtml: false) {
+  // Capture the current state
+  $original-moz: $experimental-support-for-mozilla;
+  $original-webkit: $experimental-support-for-webkit;
+  $original-o: $experimental-support-for-opera;
+  $original-ms: $experimental-support-for-microsoft;
+  $original-khtml: $experimental-support-for-khtml;
+
+  @include set-experimental-support($moz, $webkit, $ms, $o, $khtml);
+
+  @content;
+
+  @include set-experimental-support($original-moz, $original-webkit, $original-ms, $original-o, $original-khtml);
+}

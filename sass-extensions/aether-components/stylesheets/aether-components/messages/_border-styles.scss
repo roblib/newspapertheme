@@ -1,0 +1,12 @@
+// Mixin that does all the border magic
+
+@mixin aether-message-border($base-color: $am-base-color, $second-color: false, $border-width: $am-border-width, $rhythm: $am-padding, $font-size: $am-font-size, $border-radius: $am-border-radius) {
+  $second-color: $base-color;
+  // Standard form output
+  border-color: darken($second-color, 5) darken($second-color, 5) darken($second-color, 15);
+  border-style: solid;
+  border-width: $border-width;
+  @if $border-radius > 0 {
+    @include border-radius($border-radius);
+  }
+}

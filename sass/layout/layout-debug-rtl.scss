@@ -1,0 +1,65 @@
+// Import your base variables here to set vertical rhythm and for overrides.
+@import '../variables';
+
+$aether-show-grid-background: true;
+$aether-float-direction: right;
+
+@if $aether-grid-type-desktop or $aether-grid-type-tablet-landscape or $aether-grid-type-tablet or $aether-grid-type-tablet-landscape or $aether-grid-type-handheld-landscape or $aether-grid-type-handheld == fluid {
+  $grid-background-force-fluid: true;
+}
+
+// Handheld
+@include breakpoint($break-handheld) {
+  .#{$aether-gridprefix}-all-row {
+    @include aether-grid-background($aether-columns-handheld, $aether-grid-width-handheld);
+    body.toolbar & {
+      &:first-child:before {
+        @include aether-grid-background-numbers($aether-columns-handheld, $aether-grid-width-handheld, 110px);
+      }
+    }
+  }
+}
+// Handheld-Landscape
+@include breakpoint($break-handheld-landscape) {
+  .#{$aether-gridprefix}-all-row {
+    @include aether-grid-background($aether-columns-handheld, $aether-grid-width-handheld-landscape);
+    body.toolbar & {
+      &:first-child:before {
+        @include aether-grid-background-numbers($aether-columns-handheld, $aether-grid-width-handheld-landscape, 110px);
+      }
+    }
+  }
+}
+// Tablet
+@include breakpoint($break-tablet)  {
+  .#{$aether-gridprefix}-all-row {
+    @include aether-grid-background($aether-columns-tablet, $aether-grid-width-tablet);
+    body.toolbar & {
+      &:first-child:before {
+        @include aether-grid-background-numbers($aether-columns-tablet, $aether-grid-width-tablet, 88px);
+      }
+    }
+  }
+}
+// Tablet-Landscape
+@include breakpoint($break-tablet-landscape) {
+  .#{$aether-gridprefix}-all-row {
+    @include aether-grid-background($aether-columns-tablet, $aether-grid-width-tablet-landscape);
+    body.toolbar & {
+      &:first-child:before {
+        @include aether-grid-background-numbers($aether-columns-tablet, $aether-grid-width-tablet-landscape, 70px);
+      }
+    }
+  }
+}
+// Default
+@include breakpoint($break-desktop) {
+  .#{$aether-gridprefix}-all-row {
+    @include aether-grid-background($aether-columns-desktop, $aether-grid-width-desktop);
+    body.toolbar & {
+      &:first-child:before {
+        @include aether-grid-background-numbers($aether-columns-desktop, $aether-grid-width-desktop, 70px);
+      }
+    }
+  }
+}

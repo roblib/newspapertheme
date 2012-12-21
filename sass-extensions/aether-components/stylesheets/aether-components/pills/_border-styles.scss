@@ -1,0 +1,8 @@
+// Mixin that does all the border magic
+
+@mixin aether-pill-border($border-radius: $ap-border-radius, $base-color: $ap-base-color, $second-color: false, $border-width: $ap-border-width) {
+  @if $second-color == false {
+    $second-color: $base-color;
+  }
+  border: $border-width solid $second-color;
+}

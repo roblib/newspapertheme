@@ -1,0 +1,38 @@
+// Block List of Content
+//
+// Turns a standard list into a block list; very useful for touch interfaces.
+//
+// Inspired by inuit.css https://github.com/csswizardry/inuit.css
+//
+// Arguments accepted:
+// $selector - optionally configure block link selectors
+// $border-color - color of border
+// $border-bottom-width - size of bottom border
+// $item-padding - a single value for space around the item
+//
+// Browser Compatibility:
+// IE7+: This is a progressive enhancement mixin,
+// block links are not 100% width in IE7.
+
+$abl-border-color: #ccc;
+$abl-border-width: 1px;
+$abl-item-padding: 0.75em;
+$abl-link-selector: 'a';
+
+@mixin aether-block-list($link-selector: $abl-link-selector, $border-color: $abl-border-color, $border-width: $abl-border-width, $item-padding: $abl-item-padding) {
+  border-top: $border-width solid $border-color;
+  list-style: none;
+  padding-left: 0;
+  > li {
+    border-bottom: $border-width solid $border-color;
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    padding: $item-padding;
+    #{$link-selector} {
+      display: block;
+      padding: $item-padding;
+      margin: -$item-padding;
+    }
+  }
+}

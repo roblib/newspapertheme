@@ -1,0 +1,84 @@
+@import 'base';
+
+$aether-grid-type: fluid;
+$aether-columns: 10;
+$aether-grid-width: 1140px;
+$aether-include-grid-item-base: false;
+$aether-nested-classes: true;
+
+#{enumerate(".ag", 1, 10, "")}, #{enumerate(".ag2-", 1, 10, "")}, .ag0 {
+  @include grid-item-base;
+}
+
+@include grid-classes(ltr, default);
+
+.page {
+  @include container($aether-break-wide, max);
+}
+// This is the non-position version 
+.ag0 { @include span-columns(10, last right); }
+.ag1 { @include span-columns(2); }
+.ag2 { @include span-columns(6); }
+.ag3 { @include span-columns(2, last right); }
+.ag4 { @include span-columns(3,6); }
+.ag5 { @include span-columns(3,6, last right); }
+.ag6 { @include span-columns(2,6); }
+.ag7 { @include span-columns(4,6, last right); }
+.ag8 { @include span-columns(2,4); }
+.ag9 { @include span-columns(2,4, last right); }
+.ag10 { @include span-columns(4,4, last right); }
+
+// This is the position version 
+.ag2-0 { @include span-columns(10); }
+.ag2-1 { @include span-columns(2); @include position(1); }
+.ag2-2 { @include span-columns(6); @include position(3); }
+.ag2-3 { @include span-columns(2); @include position(9); }
+.ag2-4 { @include span-columns(3,6); @include position(1);}
+.ag2-5 { @include span-columns(3,6); @include position(4,6);}
+.ag2-6 { @include span-columns(2,6, first); @include position(1); }
+.ag2-7 { @include span-columns(4,6); @include position(3,6); }
+.ag2-8 { @include span-columns(2,4); @include position(1); }
+.ag2-9 { @include span-columns(2,4); @include position(3,4); }
+.ag2-10 { @include span-columns(4,4, first); @include position(1); }
+
+.ag1, .ag3, .ag2-1, .ag2-3, .ag1-color, .ag3-color {
+  background: #637E7D;
+  min-height: 20.5em;
+}
+
+.ag2, .ag2-2, .ag2-color {
+  background: #ABCDCA;
+  min-height: 5em;
+}
+
+.ag4, .ag5, .ag2-4, .ag2-5, .ag4-color, .ag5-color {
+  background: #8AACA8;
+  min-height: 5em;
+}
+
+.ag6, .ag2-6, .ag6-color {
+  background: #718f99;
+  min-height: 12.75em;
+}
+
+.ag7, .ag2-7, .ag7-color {
+  background: #718f99;
+  min-height: 5em;
+}
+
+.ag8, .ag9, .ag2-8, .ag2-9, .ag8-color, .ag9-color {
+  background: #4786a1;
+  min-height: 5em;
+}
+
+.ag10, .ag2-10, .ag10-color {
+  background: #92abbc;
+  min-height: 5em;
+}
+
+.ag0, .ag2-0, .ag0-color {
+    background: none repeat scroll 0 0 #d2ded7;
+    clear: both;
+    margin-bottom: 1.25em;
+    overflow: hidden;
+}

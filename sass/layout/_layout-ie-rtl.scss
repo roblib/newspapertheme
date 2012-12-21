@@ -1,0 +1,13 @@
+// Import your base variables here to set vertical rhythm and for overrides.
+@import '../variables';
+
+$aether-grid-type: fixed;
+$aether-float-direction: right;
+$aether-break: $break-wide;
+$aether-columns: $aether-columns-desktop;
+$aether-grid-width: $aether-grid-width-desktop;
+$aether-media: $aether-media-desktop;
+
+.ie6-8 {
+  @include grid-classes(rtl);
+}

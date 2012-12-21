@@ -1,0 +1,20 @@
+// Import your base variables here to set vertical rhythm and for overrides.
+@import '../base';
+// This is the extend-layout stylesheet. Example usage is commented out.
+
+#main {
+  @extend .g-all-row;
+}
+
+#content {
+  @include extend-layout(d 6, tl 8 right l, t 8, hl 12, h 12);
+  @include extend-layout(d 4 p, t 5 p);
+}
+#aside1 {
+  @include extend-layout(d 3, tl 4, t 4, hl 6 f, h 12);
+  @include extend-layout(d 1 p, tl 1 p, t 1 p);
+}
+#aside2 {
+  @include extend-layout(d 3 l, tl 4 f, t 12, hl 6 l, h 12 l);
+  @include extend-layout(d 10 p, tl 1 p);
+}

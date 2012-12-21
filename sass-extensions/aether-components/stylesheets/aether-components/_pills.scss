@@ -1,0 +1,44 @@
+@import "pills/border-styles";
+@import "pills/pseudo-states";
+@import "pills/text";
+
+$ap-invert-on-click: 0 !default;
+$ap-font-size: 16px !default;
+$ap-base-color: #f2f2f2 !default;
+$ap-base-color-hover: adjust-lightness($ap-base-color, -35) !default;
+$ap-base-color-active: adjust-lightness($ap-base-color, -55) !default;
+$ap-font-weight: bold !default;
+$ap-border-width: 1px !default;
+$ap-border-radius: 4px !default;
+$ap-light-text: white !default;
+$ap-dark-text: #666666 !default;
+$ap-padding: 0 0.5em !default;
+$ap-pseudo-states: true !default;
+
+@mixin aether-pill($font-size: $ap-font-size, $padding: $ap-padding, $border-radius: $ap-border-radius, $border-width: $ap-border-width, $base-color: $ap-base-color, $color-hover: $ap-base-color-hover, $color-active: $ap-base-color-active, $light-text: $ap-light-text, $dark-text: $ap-dark-text, $pseudo-states: $ap-pseudo-states) {
+  @include aether-pill-structure($font-size, $padding, $border-radius);
+  @if $ap-pseudo-states {
+    @include aether-pill-hover($base-color, $color-hover, $color-active);
+  }
+  @include aether-pill-color($base-color, $light-text, $dark-text);
+}
+
+@mixin aether-pill-color($base-color: $ap-base-color, $light-text: $ap-light-text, $dark-text: $ap-dark-text){
+  background-color: $base-color;
+  @include aether-pill-border($base-color);
+  @include aether-message-text($base-color, $light-text, $dark-text);
+}
+
+// Structure for a message box
+@mixin aether-pill-structure($font-size: $ap-font-size, $padding: $ap-padding, $border-radius: $ap-border-radius) {
+  font-size: $font-size;
+  padding: $padding;
+  @include aether-pill-default-structure;
+  @if $border-radius > 0 {
+    @include border-radius($border-radius);
+  }
+}
+
+@mixin aether-pill-default-structure {
+  text-decoration: none;
+}

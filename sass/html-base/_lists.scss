@@ -1,0 +1,72 @@
+/*
+ * ==================================================
+ * Lists
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+/* Lists */
+
+dl,
+menu,
+ol,
+ul,
+.item-list ul /* Drupal override */ {
+  // Sets 1 unit of vertical rhythm on the top and bottom margin.
+  margin: rhythm(1) 0;
+}
+
+.item-list ul li /* Drupal override */ {
+  margin: 0;
+}
+
+ul,
+ol,
+.item-list ul,
+.item-list ol {
+  ul,
+  ol {
+    margin: 0; // Turn off margins on nested lists.
+  }
+}
+
+/* Description Lists */
+
+dl {
+  @include margin-trailer(1);
+}
+
+dd {
+  /* LTR */
+  margin: 0 0 0 $typographic-indent;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dt,
+dd {
+  line-height: px-to-em($base-line-height);
+}
+
+/* Addresses paddings set differently in IE6/7 */
+
+menu,
+ol,
+ul,
+.item-list ul /* Drupal override */ {
+  padding: 0 0 0 $typographic-indent;
+}
+
+// Corrects list images handled incorrectly in IE7.
+
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}

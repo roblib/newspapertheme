@@ -1,0 +1,91 @@
+/*
+ * ==================================================
+ * Headings
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+/* Headings/small */
+// Addresses font sizes and margins set differently in IE6/7
+// Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font-family;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  @include adjust-font-size-to($font-size-h1,1.2);
+  @include margin-leader(0, $font-size-h1);
+  @include margin-trailer(0.8, $font-size-h1);
+}
+
+h2 {
+  @include adjust-font-size-to($font-size-h2,1.1);
+  @include margin-leader(0, $font-size-h2);
+  @include margin-trailer(0.9, $font-size-h2);
+}
+
+h3 {
+  @include adjust-font-size-to($font-size-h3,1);
+  @include margin-leader(0, $font-size-h3);
+  @include margin-trailer(1, $font-size-h3);
+}
+
+h4 {
+  @include adjust-font-size-to($font-size-h4,1);
+  @include margin-leader(0, $font-size-h4);
+  @include margin-trailer(1, $font-size-h4);
+}
+
+h5 {
+  @include adjust-font-size-to($font-size-h5,1);
+  @include margin-leader(0, $font-size-h5);
+  @include margin-trailer(1, $font-size-h5);
+}
+
+h6 {
+  @include adjust-font-size-to($font-size-h6,1);
+  @include margin-leader(0, $font-size-h6);
+  @include margin-trailer(1, $font-size-h6);
+  color: $text-color-light;
+}
+
+small {
+  @include margin-leader(0, $font-size-xs);
+  @include margin-trailer(1, $font-size-xs);
+  font-size: px-to-em($font-size-xs);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  small {
+    color: $text-color-light;
+  }
+}
+
+// h2 retains line height so this is removed to keep Vertical Rhythm
+h2.element-invisible {
+  line-height: 0;
+}

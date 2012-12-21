@@ -1,0 +1,77 @@
+@import "../variables";
+@import "grid-classes";
+
+html {
+  overflow:auto; 
+  overflow-x:hidden;
+}
+
+@include breakpoint($break-handheld) {
+  $aether-break: $break-smallest;
+  $aether-grid-numbers-top: 110px;
+  $aether-constraint: min;
+  $aether-constraint: false;
+  $aether-media: $aether-media-handheld;
+  $aether-grid-type: $aether-grid-type-handheld;
+  $aether-columns: $aether-columns-handheld;
+  $aether-grid-width: $aether-grid-width-handheld;
+
+  @include aether-grid-classes;
+}
+
+@include breakpoint($break-handheld-landscape) {
+
+  html {
+    -ms-text-size-adjust:none;
+    -webkit-text-size-adjust: none;
+  }
+
+  $aether-break: $break-small;
+  $aether-grid-numbers-top: 110px;
+  $aether-constraint: false;
+  $aether-grid-type: $aether-grid-type-handheld-landscape;
+  $aether-columns: $aether-columns-handheld;
+  $aether-grid-width: $aether-grid-width-handheld-landscape;
+  $aether-media: $aether-media-handheld-landscape;
+
+  @include aether-grid-classes;
+}
+
+@include breakpoint($break-tablet)  {
+  $aether-break: $break-medium;
+  $aether-grid-numbers-top: 88px;
+  $aether-constraint: false;
+  $aether-grid-type: $aether-grid-type-tablet;
+  $aether-columns: $aether-columns-tablet;
+  $aether-grid-width: $aether-grid-width-tablet;
+  $aether-media: $aether-media-tablet;
+
+  @include aether-grid-classes;
+}
+
+@include breakpoint($break-tablet-landscape) {
+  $aether-break: $break-large;
+  $aether-grid-numbers-top: 70px;
+  $aether-constraint: false;
+  $aether-grid-type: $aether-grid-type-tablet-landscape;
+  $aether-columns: $aether-columns-tablet;
+  $aether-grid-width: $aether-grid-width-tablet-landscape;
+  $aether-media: $aether-media-tablet-landscape;
+
+  @include aether-grid-classes;
+}
+
+@include breakpoint($break-desktop) {
+  $aether-break: $break-wide;
+  $aether-grid-numbers-top: 70px;
+  $aether-constraint: max;
+  $aether-grid-type: $aether-grid-type-desktop;
+  $aether-columns: $aether-columns-desktop;
+  $aether-grid-width: $aether-grid-width-desktop;
+  $aether-media: $aether-media-desktop;
+
+  @include aether-grid-classes;
+}
+
+@import "layout-ie";
+@import "extend-layout";

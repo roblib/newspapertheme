@@ -1,0 +1,60 @@
+/*
+ * ==================================================
+ * Patterns
+ * 
+ * Pattern classes to extend into other stylesheets.
+ * ==================================================
+ */
+.no-bullet {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.no-bullets {
+  list-style: none;
+}
+.no-bullets li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.pull-right {
+  display: inline;
+  float: right;
+}
+
+.pull-left {
+  display: inline;
+  float: left;
+}
+
+.muted {
+  color: #acacac;
+}
+
+.element-invisible {
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.element-focusable {
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.element-focusable:active, .element-focusable:focus {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: static !important;
+  width: auto;
+}

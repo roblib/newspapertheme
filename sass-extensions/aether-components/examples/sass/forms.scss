@@ -1,0 +1,135 @@
+@import 'base';
+@import 'aether-components';
+
+/* Form vertical rhythm */
+
+// Define consistent border, margin, and padding
+
+fieldset {
+  border-color: $text-border-alt;
+  margin: 0 2px;
+  // Apply borders and padding that keep the vertical rhythm.
+  @include apply-side-rhythm-border(top,    $width: 1px, $lines: 0.35);
+  @include apply-side-rhythm-border(bottom, $width: 1px, $lines: 0.65);
+  @include apply-side-rhythm-border(left,   $width: 1px, $lines: 0.65);
+  @include apply-side-rhythm-border(right,  $width: 1px, $lines: 0.65);
+  @include leader(1, $font-size-normal);
+  @include trailer(1, $font-size-normal);
+}
+
+.form-type-textfield,
+.form-type-date,
+.form-type-select,
+.form-type-file,
+.form-type-managed-file,
+.form-type-password,
+.form-item,
+.form-actions {
+  @include leader(1, $font-size-normal);
+  @include trailer(1, $font-size-normal);
+}
+
+// system.theme.css override
+.container-inline .form-actions,
+.container-inline.form-actions,
+#edit-basic.container-inline {
+  @include leader(0);
+  @include trailer(0);
+}
+
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  @include leader(0);
+  @include trailer(0);
+}
+
+.vertical-tabs .fieldset-description {
+  @include leader(0.5);
+}
+
+input.password-confirm,
+input.password-field {
+  margin-bottom: 0;
+}
+
+.form-item .password-strength {
+  float: none;
+  @include leader(1);
+  @include trailer(1);
+  width: 17em;
+}
+
+div.form-item div.password-suggestions {
+  @include rhythm(2);
+}
+
+.form-type-radio .description,
+.form-type-checkbox .description {
+  margin-left: 1.365em;
+}
+
+.form-item,
+.form-actions {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+tr.odd .form-item,
+tr.even .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* Responsive forms */
+
+// Make advanced search form inline for any browser size
+#search-form .form-item {
+  label.label-edit-keys { display: block; }
+  #edit-keys { width: 70%; }
+}
+
+/* Form styling */
+
+.form-select,
+.form-textarea,
+.form-text,
+.password,
+.email {
+  @include aether-form("standard");
+}
+
+/* Drupal form overrides */
+
+form > div {
+  @include border-radius(3px);
+}
+
+.form-item {
+  .description {
+    color: adjust-color($text-color, $lightness: 30);
+  }
+}
+
+.marker,
+.form-required {
+  color: #f00;
+}
+
+//.form-item input.error,
+//.form-item textarea.error,
+//.form-item select.error {
+//  border: 1px solid red;
+//}
+
+.form-item .description {
+  font-size: 0.85em;
+}
+
+// Login form
+
+#user-login-form .item-list ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}

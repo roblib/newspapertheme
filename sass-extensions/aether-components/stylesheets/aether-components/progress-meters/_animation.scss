@@ -1,0 +1,18 @@
+$experimental-support-for-opera: false;
+
+@mixin aether-meter-animate($animation-name: 'progressmeter', $dir: right) {
+  $from: 0%;
+  $to: 100%;
+  @if $dir == left {
+    $from: 100%;
+    $to: 0%;
+  }
+  @include keyframes(#{$animation-name}) {
+    #{$from} {
+      background-position: 0 0;
+    }
+    #{$to} {
+      background-position: 50px 50px;
+    }
+  }
+}

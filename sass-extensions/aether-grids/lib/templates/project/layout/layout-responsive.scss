@@ -1,0 +1,133 @@
+@import "../base";
+/* 
+ * ==================================================
+ * Tablet Landscape
+ * ==================================================
+ */
+
+@include respond-to(tablet-landscape) {
+
+$aether-grid-type: $aether-grid-type-tablet-landscape;
+$aether-columns: $aether-columns-tablet;
+$aether-grid-width: $aether-grid-width-tablet-landscape;
+$aether-media: $aether-media-tablet-landscape;
+
+  .g-all-row {
+    @include container($aether-break-large);
+    @include aether-grid-background;
+    body.toolbar & {
+      @include aether-grid-background($aether-columns-tablet, $aether-grid-width-tablet-landscape, 70px);
+    }
+  }
+
+  // Zero out desktop push/pull/offset to avoid specificity problems 
+  // in the media class stack when moving things like sidebars around.
+  // This must come before column classes.
+  @include zero-classes($aether-media-desktop,$aether-columns-desktop);
+
+  // Generate column classes for tablet media
+  @include grid-classes(ltr);
+
+}
+
+/* 
+ * ==================================================
+ * Tablet Portrait
+ * ==================================================
+ */
+
+@include respond-to(tablet)  {
+
+$aether-grid-type: $aether-grid-type-tablet;
+$aether-columns: $aether-columns-tablet;
+$aether-grid-width: $aether-grid-width-tablet;
+$aether-media: $aether-media-tablet;
+
+  .g-all-row {
+    @include container($aether-break-medium);
+    @include aether-grid-background;
+    body.toolbar & {
+      @include aether-grid-background($aether-columns-tablet, $aether-grid-width-tablet, 88px);
+    }
+  }
+
+  // Zero out desktop push/pull/offset to avoid specificity problems 
+  // in the media class stack when moving things like sidebars around.
+  // This must come before column classes.
+  @include zero-classes($aether-media-desktop,$aether-columns-desktop);
+
+  // Generate column classes for tablet media
+  @include grid-classes(ltr);
+
+}
+
+/* 
+ * ==================================================
+ * Handheld Landscape
+ * ==================================================
+ */
+
+@include respond-to(handheld-landscape) {
+
+$aether-grid-type: $aether-grid-type-handheld-landscape;
+$aether-columns: $aether-columns-handheld;
+$aether-grid-width: $aether-grid-width-handheld-landscape;
+$aether-media: $aether-media-handheld-landscape;
+
+  // Disables iphone font size increase when viewing in landscape mode.
+  html {
+    -ms-text-size-adjust:none;
+    -webkit-text-size-adjust: none;
+  }
+
+  .g-all-row {
+    @include container($aether-break-small);
+    @include aether-grid-background;
+    body.toolbar & {
+      @include aether-grid-background($aether-columns-handheld, $aether-grid-width-handheld-landscape, 110px);
+    }
+  }
+
+  // Zero out desktop push/pull/offset to avoid specificity problems 
+  // in the media class stack when moving things like sidebars around.
+  // This must come before column classes.
+  @include zero-classes($aether-media-desktop,$aether-columns-desktop);
+
+  // Generate column classes for handheld landscape media
+  @include grid-classes(ltr);
+
+}
+
+/* 
+ * ==================================================
+ * Handheld Portrait
+ * ==================================================
+ */
+
+@include respond-to(handheld) {
+
+$aether-grid-type: $aether-grid-type-handheld;
+$aether-columns: $aether-columns-handheld;
+$aether-grid-width: $aether-grid-width-handheld;
+$aether-media: $aether-media-handheld;
+
+  .g-all-row {
+    @include container($aether-break-smallest, min);
+    @include aether-grid-background;
+    body.toolbar & {
+      @include aether-grid-background($aether-columns-handheld, $aether-grid-width-handheld, 110px);
+    }
+  }
+
+  // Zero out desktop push/pull/offset to avoid specificity problems 
+  // in the media class stack when moving things like sidebars around.
+  // This must come before column classes.
+  @include zero-classes($aether-media-desktop,$aether-columns-desktop);
+
+  // Generate column classes for handheld media
+  @include grid-classes(ltr);
+
+}
+
+// The extend-layout partial must be imported into both default layout and media queries stylesheets
+@import "extend-layout";

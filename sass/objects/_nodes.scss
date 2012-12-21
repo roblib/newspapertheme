@@ -1,0 +1,37 @@
+/*
+ * ==================================================
+ * Node Styling
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+// Node wrapper
+.node { 
+
+  .field {
+    @include margin-leader(1, $font-size-normal);
+    @include margin-trailer(1, $font-size-normal);
+  }
+
+  .submitted {
+    @include margin-leader(1, $font-size-normal);
+    @include margin-trailer(1, $font-size-normal);
+    color: $text-color-light;
+  }
+
+  ul.links {
+    @include margin-leader(1, $font-size-normal);
+    @include margin-trailer(1, $font-size-normal);
+  }
+
+}
+
+.node-teaser {
+  .submitted {
+    @include margin-trailer(1, $font-size-normal);
+  }
+}

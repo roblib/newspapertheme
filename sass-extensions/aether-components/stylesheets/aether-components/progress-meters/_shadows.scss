@@ -1,0 +1,7 @@
+@mixin aether-meter-base-box-shadow {
+  @include box-shadow(rgba(0, 0, 0, 0.1) 0 1px 2px inset);
+}
+
+@mixin aether-meter-box-shadow {
+  @include box-shadow(rgba(255,255,255,0.3) 0 2px 9px inset, rgba(0,0,0,0.4) 0 -2px 6px inset);
+}

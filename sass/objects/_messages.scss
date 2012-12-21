@@ -1,0 +1,38 @@
+/*
+ * ==================================================
+ * Messages
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+/* Base alerts */
+
+%message--status {
+  @include aether-message-color($base-color: #d0e5af, $dark-text: #234600);
+}
+
+%message--warning {
+  @include aether-message-color($base-color: #f5e4a9, $dark-text: #884400);
+}
+
+%message--error {
+  @include aether-message-color($base-color: #d84d47);
+}
+
+div.messages {
+  @include trailer(1);
+  @include aether-message-structure;
+  &.status {
+    @extend %message--status;
+  }
+  &.warning {
+    @extend %message--warning;
+  }
+  &.error {
+    @extend %message--error;
+  }
+}

@@ -1,0 +1,49 @@
+@import "messages/border-styles";
+@import "messages/gradient-styles";
+@import "messages/text";
+
+$am-border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)  !default;
+$am-border-width: 1px !default;
+$am-base-color: #fff !default;
+$am-second-color: false !default;
+$am-dark-text: #666666 !default;
+$am-font-size: px-to-em($font-size-normal) !default;
+$am-font-weight: bold !default;
+$am-gradient-bottom: adjust-color($am-base-color, $lightness: -6, $saturation: -12) !default;
+$am-gradient-state: true !default;
+$am-gradient-top: adjust-color($am-base-color, $lightness: 6, $saturation: 12) !default;
+$am-light-text: white !default;
+$am-line-height: $base-line-height !default;
+$am-padding: 0.5em !default;
+$am-border-radius: 4px !default;
+$am-ie: true;
+
+@mixin aether-message($font-size: $am-font-size, $padding: $am-padding, $base-color: $am-base-color, $second-color: $am-second-color, $border-width: $am-border-width, $border-radius: $am-border-radius, $light-text: $am-light-text, $dark-text: $am-dark-text) {
+  @include aether-message-structure($font-size, $padding, $border-radius);
+  @include aether-message-border($base-color, $second-color, $border-width, $font-size, $border-radius);
+  @include aether-message-color($base-color, $light-text, $dark-text);
+}
+
+@mixin aether-message-color($base-color: $am-base-color, $light-text: $am-light-text, $dark-text: $am-dark-text){
+  @include aether-message-border($base-color);
+  @if $am-gradient-state {
+    @include aether-message-gradient($base-color);
+  }
+  @else {
+    background-color: $base-color;
+  }
+  @include aether-message-text($base-color, $light-text, $dark-text);
+}
+
+// Structure for a message box
+@mixin aether-message-structure($font-size: $am-font-size, $padding: $am-padding, $border-radius: $am-border-radius) {
+  font-size: $font-size;
+  padding: $padding;
+  @include aether-message-default-structure;
+  @include border-radius($border-radius);
+}
+
+@mixin aether-message-default-structure {
+  background-position: 0;
+  position: relative;
+}

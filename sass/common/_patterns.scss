@@ -1,0 +1,128 @@
+/*
+ * ==================================================
+ * Patterns
+ * 
+ * Pattern classes to extend into other stylesheets.
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+// These styles will be output to CSS to use in markup
+
+// Local mixin to remove bullets from a list, apply to ul.
+.no-bullet {
+  @include no-bullet;
+}
+
+// Local mixin to remove bullets from a list, apply to li.
+.no-bullets {
+  @include no-bullets;
+}
+
+.pull-right {
+  @include float(right);
+}
+
+.pull-left {
+  @include float(left);
+}
+
+.muted {
+  color: $text-color-light;
+}
+
+.element-invisible {
+  @include element-invisible;
+}
+
+.element-focusable {
+  @include element-focusable;
+}
+
+// These styles are placeholders that will not generate CSS but can be extended.
+// e.g.  .block-user { @extend %inline-login; }
+// Change any of these to classes if you want to add them via the block class module.
+
+// Transitions the standard login block to an inline login block, add to .block-user
+%inline-login {
+  &.block {
+    @include margin-trailer(0);
+  }
+  .form-item, .form-actions, label, .item-list ul li {
+    @include inline-block;
+    @include float(left);
+    @include margin-trailer(0);
+    padding-right: 3px;
+    border-radius: 0;
+  }
+  .item-list {
+    clear: left;
+    ul li {
+      padding-right: 10px;
+    }
+  }
+}
+
+// This will create inline forms if you use it as an @extend on .form-item
+// e.g. .form-item { @extend %form-inline; }
+%form-inline {
+  clear: both;
+  .form-item {
+    clear: none;
+  }
+  .form-label {
+    @include inline-block;
+    float: left;
+    text-align: right;
+    width: 140px;
+  }
+  [class*="form-item-checkboxes"],
+  &.form-type-checkbox,
+  [class*="form-item-radios"] {
+    .form-label {
+      display: inline;
+      float: none;
+      text-align: left;
+      width: auto;
+    }
+  }
+  > {
+    .form-checkboxes,
+    .form-select,
+    #edit-date,
+    #edit-radios,
+    #edit-file,
+    #edit-managed-file,
+    .description,
+    .form-text,
+    .field-suffix,
+    .password-strength,
+    .form-textarea-wrapper {
+      margin-left: 160px;
+      display: block;
+    }
+    .container-inline {
+        .form-select,
+        .form-radios {
+        display: inline;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+// Add an ellipsis to any content.
+
+%ellipsis {
+  @include ellipsis; // Local mixin to add an ellipsis.
+}
+
+// Vertical Align content.
+
+%center-vertically {
+  @include center-vertically;
+}

@@ -1,0 +1,156 @@
+.g-all-c1, .g-all-c2, .g-all-c3, .g-all-c4, .g-all-c5, .g-all-c6, .g-all-c7, .g-all-c8, .g-all-c9, .g-all-c10, .g-all-c11, .g-all-c12,
+.g-d-c1, .g-d-c2, .g-d-c3, .g-d-c4, .g-d-c5, .g-d-c6, .g-d-c7, .g-d-c8, .g-d-c9, .g-d-c10, .g-d-c11, .g-d-c12 {
+  float: right;
+}
+
+.g-d-c1, .g-all-c1 {
+  margin-left: 20px;
+  width: 74px;
+  margin-right: 0;
+}
+
+.g-d-c2, .g-all-c2 {
+  margin-left: 20px;
+  width: 168px;
+  margin-right: 0;
+}
+
+.g-d-c3, .g-all-c3 {
+  margin-left: 20px;
+  width: 262px;
+  margin-right: 0;
+}
+
+.g-d-c4, .g-all-c4 {
+  margin-left: 20px;
+  width: 356px;
+  margin-right: 0;
+}
+
+.g-d-c5, .g-all-c5 {
+  margin-left: 20px;
+  width: 450px;
+  margin-right: 0;
+}
+
+.g-d-c6, .g-all-c6 {
+  margin-left: 20px;
+  width: 544px;
+  margin-right: 0;
+}
+
+.g-d-c7, .g-all-c7 {
+  margin-left: 20px;
+  width: 638px;
+  margin-right: 0;
+}
+
+.g-d-c8, .g-all-c8 {
+  margin-left: 20px;
+  width: 732px;
+  margin-right: 0;
+}
+
+.g-d-c9, .g-all-c9 {
+  margin-left: 20px;
+  width: 826px;
+  margin-right: 0;
+}
+
+.g-d-c10, .g-all-c10 {
+  margin-left: 20px;
+  width: 920px;
+  margin-right: 0;
+}
+
+.g-d-c11, .g-all-c11 {
+  margin-left: 20px;
+  width: 1014px;
+  margin-right: 0;
+}
+
+.g-d-c12, .g-all-c12 {
+  margin-left: 20px;
+  width: 1108px;
+  margin-right: 0;
+}
+
+.g-all-p1, .g-d-p1 {
+  margin-right: 0px;
+  margin-left: -100%;
+}
+
+.g-all-p2, .g-d-p2 {
+  margin-right: 94px;
+  margin-left: -100%;
+}
+
+.g-all-p3, .g-d-p3 {
+  margin-right: 188px;
+  margin-left: -100%;
+}
+
+.g-all-p4, .g-d-p4 {
+  margin-right: 282px;
+  margin-left: -100%;
+}
+
+.g-all-p5, .g-d-p5 {
+  margin-right: 376px;
+  margin-left: -100%;
+}
+
+.g-all-p6, .g-d-p6 {
+  margin-right: 470px;
+  margin-left: -100%;
+}
+
+.g-all-p7, .g-d-p7 {
+  margin-right: 564px;
+  margin-left: -100%;
+}
+
+.g-all-p8, .g-d-p8 {
+  margin-right: 658px;
+  margin-left: -100%;
+}
+
+.g-all-p9, .g-d-p9 {
+  margin-right: 752px;
+  margin-left: -100%;
+}
+
+.g-all-p10, .g-d-p10 {
+  margin-right: 846px;
+  margin-left: -100%;
+}
+
+.g-all-p11, .g-d-p11 {
+  margin-right: 940px;
+  margin-left: -100%;
+}
+
+.g-all-p12, .g-d-p12 {
+  margin-right: 1034px;
+  margin-left: -100%;
+}
+
+.g-all-right, .g-d-right {
+  display: inline;
+  float: left;
+}
+
+.g-all-left, .g-d-left {
+  display: inline;
+  float: right;
+}
+
+.g-all-f, .g-d-f {
+  clear: right;
+}
+
+.g-all-l, .g-d-l {
+  clear: left;
+  margin-left: 0;
+  #margin-left: -1em;
+}

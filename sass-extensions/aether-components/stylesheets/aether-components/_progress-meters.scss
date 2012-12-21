@@ -1,0 +1,108 @@
+@import 'shared/compass-animation';
+@import 'progress-meters/animation';
+@import 'progress-meters/gradients';
+@import 'progress-meters/shadows';
+
+$apm-base-border-radius: 0 !default;
+$apm-meter-right-radius: 0 !default;
+$apm-meter-left-radius: 0 !default;
+$apm-padding: 0 !default;
+$apm-meter-color: #f42323 !default;
+$apm-base-color: #ebebeb !default;
+$apm-meter-height: 20px !default;
+$apm-bar-selector: 'span' !default;
+$apm-stripes: true !default;
+$apm-animate: true !default;
+$apm-webkit-support: true !default;
+$apm-auto-include-meter-color: true !default;
+$apm-auto-include-meter-stripes: true !default;
+$apm-auto-include-meter-animate: true !default;
+
+@mixin aether-meter($animation-name: 'progressmeter', $base-color: $apm-base-color, $meter-height: $apm-meter-height, $padding: $apm-padding, $border-radius: $apm-base-border-radius, $meter-color: $apm-meter-color, $bar-selector: $apm-bar-selector, $stripes: $apm-stripes, $animate: $apm-animate, $meter-left-radius: $apm-meter-left-radius, $meter-right-radius: $apm-meter-right-radius) {
+  @if $apm-auto-include-meter-stripes == false {
+    $stripes: false;
+  }
+  @if $apm-auto-include-meter-animate == false {
+    $animate: false;
+  }
+  @include aether-meter-base-structure($base-color, $border-radius, $meter-height, $padding);
+  > #{$bar-selector} {
+    @include aether-meter-structure($animation-name, $stripes, $animate);
+    @if $apm-auto-include-meter-color {
+      @include aether-meter-color($meter-color, $meter-left-radius, $meter-right-radius);
+    }
+  }
+}
+
+@mixin aether-meter-structure($animation-name: 'progressmeter', $stripes: $apm-stripes, $animate: $apm-animate) {
+  @if $animate or $stripes {
+    @include aether-meter-animation($animation-name, $stripes, $animate);
+  }
+  @include aether-meter-box-shadow;
+  @include aether-meter-default-structure;
+  @include background(hsl(136, 64%, 46%), linear-gradient(center bottom, hsl(136, 64%, 46%) 37%, hsl(120, 84%, 64%) 69%));
+}
+
+@mixin aether-meter-default-structure {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+@mixin aether-meter-base-structure($base-color: $apm-base-color, $border-radius: $apm-base-border-radius, $meter-height: $apm-meter-height, $padding: $apm-padding) {
+  @include aether-meter-base-box-shadow;
+  @include aether-meter-base-default-structure;
+  @include border-radius($border-radius);
+  background-color: $base-color;
+  height: $meter-height;
+  padding: $padding;
+  @include aether-meter-border($base-color);
+}
+
+// Mixin that does all the border magic
+@mixin aether-meter-border($base-color: $apm-base-color) {
+  // Standard form output
+  border-color: darken($base-color, 5) darken($base-color, 5) darken($base-color, 8);
+  border-style: solid;
+  border-width: 1px;
+}
+
+
+@mixin aether-meter-base-default-structure {
+  position: relative;
+}
+
+@mixin aether-meter-animation($animation-name: 'progressmeter', $stripes: $apm-stripes, $animate: $apm-animate) {
+  @if $apm-webkit-support {
+    @include aether-meter-animate-structure($animation-name, $stripes, $animate);
+  } @else {
+    &:after {
+      @include aether-meter-animate-structure($animation-name, $stripes, $animate);
+    }
+  }
+}
+
+@mixin aether-meter-animate-structure($animation-name: 'progressmeter', $stripes: $apm-stripes, $animate: $apm-animate) {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 1;
+  @if $animate {
+    @include animation(#{$animation-name} 2s linear infinite);
+  } @else {
+    @include animation(none);
+  }
+  @if $stripes or $animate {
+    @include background(linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent));
+    @include background-size(50px 50px);
+  } @else {
+    background-image: none;
+  }
+}
+
+@mixin aether-meter-stripes {
+  @include aether-meter-animation($stripes: true, $animate: false)
+}
+

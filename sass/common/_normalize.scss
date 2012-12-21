@@ -1,0 +1,207 @@
+/*
+ * ==================================================
+ * Normalize
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+// Base structure
+
+@include establish-baseline;
+
+html {
+  height: 100%;
+  // Prevent iOS text size adjust on orientation change without disabling user zoom.
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// HTML5 display definitions.
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+dialog,
+summary {
+  display: block;
+}
+
+// Vertical Rhythm, add and/or remove tags as your baseline grid needs.
+
+p,
+blockquote,
+q,
+pre,
+address,
+hr,
+code,
+samp,
+dl,
+ol,
+ul,
+form,
+table,
+fieldset,
+menu,
+figure,
+figcaption,
+button,
+hr {
+  @include margin-leader(0);
+  @include margin-trailer(1);
+}
+
+// Corrects inline-block not defined in IE6/7/8 and FF3.
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    *display: inline;
+    *zoom: 1;
+  }
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+// Ensures content is hidden from all presentations, including screenreaders.
+
+[hidden] {
+  display: none;
+}
+
+body {
+  margin: 0;
+}
+
+// Embedded content
+
+img,
+object,
+video {
+  max-width: 100%;
+  height: auto;
+// Automatically scales images larger than the container. Consider this first: http://unstoppablerobotninja.com/entry/fluid-images/
+}
+
+img {
+  height: auto;
+  border: 0;
+  // Improve IE's resizing of images: css-tricks.com/ie-fix-bicubic-scaling-for-images
+  .ie6-7 & {
+    -ms-interpolation-mode: bicubic;
+  }
+}
+
+// Corrects overflow displayed oddly in IE9.
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+// Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7.
+
+// IE7
+@if $legacy-support-for-ie7 {
+  .ie6-7 {
+    table {
+      button,
+      input {
+        overflow: auto;
+      }
+    }
+  }
+}
+
+// Position 'sub' and 'sup' without affecting line-height: gist.github.com/413930
+
+sub {
+  @include adjust-font-size-to($font-size-xxs,0);
+  position: relative;
+  vertical-align: baseline;
+  bottom: -0.25em;
+}
+
+sup {
+  @include adjust-font-size-to($font-size-xxs,0);
+  position: relative;
+  top: -0.5em;
+  vertical-align: baseline;
+}
+
+/* Figures */
+
+figure {
+  margin: 0;
+}
+
+/* Print styles */ 
+
+// Inlined to avoid extra HTTP connection.
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    filter: none !important;
+    // Black prints faster: sanbeiji.com/archives/953
+    @include text-shadow(none);
+    -ms-filter: none !important;
+  }
+
+  a {
+    text-decoration: underline;
+    &:visited {
+      text-decoration: underline;
+    }
+    &[href]:after {
+      content: " (" attr(href) ")";
+    }
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  // Do not show javascript and internal links.
+  a {
+    &[href^="javascript:"]:after,
+    &[href^="#"]:after {
+      content: "";
+    }
+  }
+  // Printing Tables: css-discuss.incutio.com/wiki/Printing_Tables
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

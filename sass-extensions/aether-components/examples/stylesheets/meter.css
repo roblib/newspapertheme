@@ -1,0 +1,380 @@
+/* Added for demo purposes */
+.container {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.meter, .meter-slim {
+  margin-bottom: 1.5em;
+  margin-top: 1.5em; }
+
+/* Usage examples start here */
+.stripes {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  animation: none;
+  background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  -webkit-background-size: 50px 50px;
+  -moz-background-size: 50px 50px;
+  background-size: 50px 50px; }
+
+.meter {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px inset;
+  position: relative;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
+  background-color: #555555;
+  height: 20px;
+  padding: 10px;
+  border-color: #484848 #484848 #414141;
+  border-style: solid;
+  border-width: 1px; }
+  .meter > span {
+    -webkit-box-shadow: rgba(255, 255, 255, 0.3) 0 2px 9px inset, rgba(0, 0, 0, 0.4) 0 -2px 6px inset;
+    -moz-box-shadow: rgba(255, 255, 255, 0.3) 0 2px 9px inset, rgba(0, 0, 0, 0.4) 0 -2px 6px inset;
+    box-shadow: rgba(255, 255, 255, 0.3) 0 2px 9px inset, rgba(0, 0, 0, 0.4) 0 -2px 6px inset;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #2ac052, -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(37%, #2ac052), color-stop(69%, #56f056));
+    background: #2ac052, -webkit-linear-gradient(center bottom, #2ac052 37%, #56f056 69%);
+    background: #2ac052, -moz-linear-gradient(center bottom, #2ac052 37%, #56f056 69%);
+    background: #2ac052, linear-gradient(center bottom, #2ac052 37%, #56f056 69%); }
+  .meter .animate {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    -webkit-animation: big 2s linear infinite;
+    -moz-animation: big 2s linear infinite;
+    -ms-animation: big 2s linear infinite;
+    animation: big 2s linear infinite;
+    background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    -webkit-background-size: 50px 50px;
+    -moz-background-size: 50px 50px;
+    background-size: 50px 50px; }
+  .meter .red {
+    -moz-border-radius-topleft: 20px;
+    -webkit-border-top-left-radius: 20px;
+    border-top-left-radius: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -moz-border-radius-topright: 8px;
+    -webkit-border-top-right-radius: 8px;
+    border-top-right-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #f42323;
+    position: relative; }
+    .meter .red:after {
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0.1)));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      -moz-border-radius-topleft: 20px;
+      -webkit-border-top-left-radius: 20px;
+      border-top-left-radius: 20px;
+      -moz-border-radius-bottomleft: 20px;
+      -webkit-border-bottom-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      -moz-border-radius-topright: 8px;
+      -webkit-border-top-right-radius: 8px;
+      border-top-right-radius: 8px;
+      -moz-border-radius-bottomright: 8px;
+      -webkit-border-bottom-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      content: "";
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1; }
+  .meter .blue {
+    -moz-border-radius-topleft: 20px;
+    -webkit-border-top-left-radius: 20px;
+    border-top-left-radius: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -moz-border-radius-topright: 8px;
+    -webkit-border-top-right-radius: 8px;
+    border-top-right-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #f42323;
+    position: relative; }
+    .meter .blue:after {
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0.1)));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      -moz-border-radius-topleft: 20px;
+      -webkit-border-top-left-radius: 20px;
+      border-top-left-radius: 20px;
+      -moz-border-radius-bottomleft: 20px;
+      -webkit-border-bottom-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      -moz-border-radius-topright: 8px;
+      -webkit-border-top-right-radius: 8px;
+      border-top-right-radius: 8px;
+      -moz-border-radius-bottomright: 8px;
+      -webkit-border-bottom-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      content: "";
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1; }
+
+@-moz-keyframes big {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+@-webkit-keyframes big {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+@-ms-keyframes big {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+@keyframes big {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+.meter-slim {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px inset;
+  position: relative;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  background-color: #ebebeb;
+  height: 20px;
+  padding: 0;
+  border-color: #dedede #dedede #d7d7d7;
+  border-style: solid;
+  border-width: 1px; }
+  .meter-slim > span {
+    -webkit-box-shadow: rgba(255, 255, 255, 0.3) 0 2px 9px inset, rgba(0, 0, 0, 0.4) 0 -2px 6px inset;
+    -moz-box-shadow: rgba(255, 255, 255, 0.3) 0 2px 9px inset, rgba(0, 0, 0, 0.4) 0 -2px 6px inset;
+    box-shadow: rgba(255, 255, 255, 0.3) 0 2px 9px inset, rgba(0, 0, 0, 0.4) 0 -2px 6px inset;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #2ac052, -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(37%, #2ac052), color-stop(69%, #56f056));
+    background: #2ac052, -webkit-linear-gradient(center bottom, #2ac052 37%, #56f056 69%);
+    background: #2ac052, -moz-linear-gradient(center bottom, #2ac052 37%, #56f056 69%);
+    background: #2ac052, linear-gradient(center bottom, #2ac052 37%, #56f056 69%); }
+  .meter-slim .animate {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    -webkit-animation: slim 2s linear infinite;
+    -moz-animation: slim 2s linear infinite;
+    -ms-animation: slim 2s linear infinite;
+    animation: slim 2s linear infinite;
+    background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    -webkit-background-size: 50px 50px;
+    -moz-background-size: 50px 50px;
+    background-size: 50px 50px; }
+  .meter-slim .blue {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #0e90d2;
+    position: relative; }
+    .meter-slim .blue:after {
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0.1)));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      -moz-border-radius-topleft: 0;
+      -webkit-border-top-left-radius: 0;
+      border-top-left-radius: 0;
+      -moz-border-radius-bottomleft: 0;
+      -webkit-border-bottom-left-radius: 0;
+      border-bottom-left-radius: 0;
+      -moz-border-radius-topright: 0;
+      -webkit-border-top-right-radius: 0;
+      border-top-right-radius: 0;
+      -moz-border-radius-bottomright: 0;
+      -webkit-border-bottom-right-radius: 0;
+      border-bottom-right-radius: 0;
+      content: "";
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1; }
+  .meter-slim .pink {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #ff00d0;
+    position: relative; }
+    .meter-slim .pink:after {
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0.1)));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      -moz-border-radius-topleft: 0;
+      -webkit-border-top-left-radius: 0;
+      border-top-left-radius: 0;
+      -moz-border-radius-bottomleft: 0;
+      -webkit-border-bottom-left-radius: 0;
+      border-bottom-left-radius: 0;
+      -moz-border-radius-topright: 0;
+      -webkit-border-top-right-radius: 0;
+      border-top-right-radius: 0;
+      -moz-border-radius-bottomright: 0;
+      -webkit-border-bottom-right-radius: 0;
+      border-bottom-right-radius: 0;
+      content: "";
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1; }
+  .meter-slim .purple {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #b300ff;
+    position: relative; }
+    .meter-slim .purple:after {
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0.1)));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      background: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      -moz-border-radius-topleft: 0;
+      -webkit-border-top-left-radius: 0;
+      border-top-left-radius: 0;
+      -moz-border-radius-bottomleft: 0;
+      -webkit-border-bottom-left-radius: 0;
+      border-bottom-left-radius: 0;
+      -moz-border-radius-topright: 0;
+      -webkit-border-top-right-radius: 0;
+      border-top-right-radius: 0;
+      -moz-border-radius-bottomright: 0;
+      -webkit-border-bottom-right-radius: 0;
+      border-bottom-right-radius: 0;
+      content: "";
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1; }
+
+@-moz-keyframes slim {
+  100% {
+    background-position: 0 0; }
+
+  0% {
+    background-position: 50px 50px; } }
+
+@-webkit-keyframes slim {
+  100% {
+    background-position: 0 0; }
+
+  0% {
+    background-position: 50px 50px; } }
+
+@-ms-keyframes slim {
+  100% {
+    background-position: 0 0; }
+
+  0% {
+    background-position: 50px 50px; } }
+
+@keyframes slim {
+  100% {
+    background-position: 0 0; }
+
+  0% {
+    background-position: 50px 50px; } }

@@ -1,0 +1,14 @@
+/*
+ * ==================================================
+ * Blocks
+ * ==================================================
+ */
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+.block {
+  @include margin-trailer(1, $base-font-size);
+}

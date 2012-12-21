@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Aether Grids</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="../css/layout/layout-responsive.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+  </head>
+
+<body class="page">
+
+<header id="overview" class="g-all-row">
+  <h1>Base CSS</h1>
+<!--   <p class="lead">On top of the scaffolding, basic HTML elements are styled and enhanced with extensible classes to provide a fresh, consistent look and feel.</p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#typography">Typography</a></li>
+      <li class=""><a href="#code">Code</a></li>
+      <li class=""><a href="#tables">Tables</a></li>
+      <li class=""><a href="#forms">Forms</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#icons">Icons by Glyphicons</a></li>
+    </ul>
+  </div> -->
+</header>
+
+  <div class="main">
+
+    <section id="typography" class="g-all-row">
+
+      <div class="page-header">
+        <h1>Typography <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+      </div>
+
+      <div class="g-all-c4 g-hl-c12 g-h-c12">
+        <h3>Typographic scale</h3>
+        <p>The typographic grid is based on Compass Vertical Rhythm mixins. Once your $base-line-height and $base-font-size are set, 
+          all other typographic elements can rely on those values and adjust accordingly with wonderful mixins such as @include adjust-font-size() and leader() / trailer().</p>
+      </div>
+
+      <div class="g-all-c4 g-hl-c12 g-h-c12">
+        <h3>Example body text</h3>
+        <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+        <h3>Lead body copy</h3>
+        <p>Make a paragraph stand out by adding <code>.lead</code>.</p>
+        <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+      </div>
+
+      <div class="g-all-c4 g-hl-c12 g-h-c12 g-all-l">
+        <div class="well">
+          <h1>h1. Et et porta cras tempors</h1>
+          <h2>h2. malesuada elementum amet</h2>
+          <h3>h3. Gravida mi lorem erat nam</h3>
+          <h4>h4. Lacinia viverra dignissim tortor eros</h4>
+          <h5>h5. Tortor vitae orci dignissim eu</h5>
+          <h6>h6. Mattis convallis amet magna nunc</h6>
+        </div>
+      </div>
+
+<section class="g-all-row">
+<h2>Link, Emphasis and Strong</h2>
+
+  <table style="position: fixed; top: 65px; left: 278.5px; visibility: hidden; width: 826px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 142.867px; display: table-cell;">Element</th>
+        <th style="width: 117.867px; display: table-cell;">Usage</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table bordered-table condensed-table">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr class="odd">
+      <td>Link</td>
+      <td>Cras vulputate accumsan <a href="#">turpis neque iaculis</a> mi vitae erat orci.</td>
+    </tr>
+     <tr class="even">
+      <td><code>&lt;em&gt;</code></td>
+      <td>Massa pellentesque pellentesque <em>velit adipiscing iaculis</em> auctor ac gravida neque.</td>
+    </tr>
+     <tr class="odd">
+      <td><code>&lt;strong&gt;</code></td>
+      <td>Nunc est luctus <strong>nisl orci lorem</strong> neque aliquam venenatis aliquam.</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<h2>Blockquotes</h2>
+<section class="g-all-row">
+
+  <table style="position: fixed; top: 65px; left: 278.5px; visibility: hidden; width: 826px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 142.867px; display: table-cell;">Element</th>
+        <th style="width: 117.867px; display: table-cell;">Usage</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table bordered-table condensed-table">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr class="odd">
+      <td><code>&lt;blockquote&gt;</code></td>
+      <td>Block-level element for quoting content from another source </td>
+    </tr>
+     <tr class="even">
+      <td><code>&lt;small&gt;</code></td>
+      <td>Optional element for adding a user-facing citation, typically an author with title of work.</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<h2>Example blockquotes</h2>
+<section class="g-all-row">
+<div class="g-all-c6 g-h-c12">
+  <p>Default blockquotes are styled as such:</p>
+  <blockquote>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+    <small>Someone famous in <cite title="">Body of work</cite></small>
+  </blockquote>
+</div>
+<div class="g-all-c6 g-h-c12 g-all-l">
+  <p>To float your blockquote to the right, add <code>class="pull-right":</code></p>
+  <blockquote class="pull-right">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+    <small>Someone famous in <cite title="">Body of work</cite></small>
+  </blockquote>
+</div>  
+</section>
+
+<h2>Lists</h2>
+
+<section class="g-all-row">
+  <div class="g-all-c4 g-hl-c12 g-h-c12">
+    <div class="item-list">
+      <h3>Unordered</h3>
+      <ul>
+        <li class="first">Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li class="last">Phasellus iaculis neque</li>
+      </ul>
+    </div>
+  </div>
+  <div class="g-all-c4 g-hl-c12 g-h-c12">
+    <div class="item-list">
+      <h3>Unstyled</h3>
+      <ul class="no-bullets" style="padding: 0">
+        <li class="first">Lorem ipsum dolor sit amet</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>
+          <ul>
+            <li class="first">Integer molestie lorem at massa</li>
+            <li class="last">Facilisis in pretium nisl aliquet</li>
+          </ul>
+        </li>
+        <li class="last">Phasellus iaculis neque</li>
+      </ul>
+    </div>
+  </div>
+  <div class="g-all-c4 g-hl-c12 g-h-c12 g-all-l">
+    <div class="item-list">
+      <h3>Ordered</h3>
+      <ol>
+        <li class="first">Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li class="last">Phasellus iaculis neque</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="g-all-row">
+<h2>Description Lists</h2>
+  <div class="g-all-c6 g-h-c12">
+    <h3>Standard</h3>
+    <div class="item-list">
+    <dl>
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+        <dt>Euismod</dt>
+        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+        <dt>Malesuada porta</dt>
+        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+    </dl>
+    </div>
+  </div>
+  <div class="g-all-c6 g-h-c12 g-all-l">
+    <h3>Inline</h3>
+    <div class="item-list">
+    <dl>
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+        <dt>Euismod</dt>
+        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+        <dt>Malesuada porta</dt>
+        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+    </dl>
+    </div>
+  </div>
+</section>
+</section>
+
+<section class="g-all-row">
+  <h1>Tables</h1>
+    <table style="position: fixed; top: 65px; left: 278.5px; visibility: hidden; width: 826px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 142.867px; display: table-cell;">Name</th>
+        <th style="width: 117.867px; display: table-cell;">Class</th>
+        <th style="width: 200.867px; display: table-cell;">Description</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table bordered-table condensed-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr class="odd">
+      <td>Default</td>
+      <td class="muted">None</td>
+      <td>None</td>
+    </tr>
+     <tr class="even">
+      <td>Condensed</td>
+      <td><code>.condensed-table</code></td>
+      <td>None</td>
+    </tr>
+     <tr class="odd">
+      <td>Bordered</td>
+      <td><code>.bordered-table</code></td>
+      <td>None</td>
+    </tr>
+     <tr class="odd">
+      <td>Zebra Striped</td>
+      <td><code>.zebra-striped</code></td>
+      <td>None</td>
+    </tr>
+    </tbody>
+  </table>
+
+<section class="g-all-row">
+<h2>Default</h2>
+  <table style="position: fixed; top: 65px; left: 469.983px; visibility: hidden; width: 544px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 85.8666px; display: table-cell;">vitae</th>
+        <th style="width: 65.8666px; display: table-cell;">lacus</th>
+        <th style="width: 94.8666px; display: table-cell;">lorem</th>
+        <th style="width: 95.8666px; display: table-cell;">dignissim</th>
+        <th style="width: 90.8666px; display: table-cell;">tincidunt</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table">
+  <thead>
+    <tr>
+      <th>vitae</th>
+      <th>lacus</th>
+      <th>lorem</th>
+      <th>dignissim</th>
+      <th>tincidunt</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>convallis</td>
+        <td>sit</td>
+        <td>felis</td>
+        <td>viverra</td>
+        <td>dignissim</td>
+      </tr>
+       <tr class="even">
+        <td>porta</td>
+        <td>enim</td>
+        <td>elementum</td>
+        <td>vestibulum</td>
+        <td>lacinia</td>
+      </tr>
+       <tr class="odd">
+        <td>viverra</td>
+        <td>ante</td>
+        <td>orci</td>
+        <td>velit</td>
+        <td>orci</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>Condensed</h2>
+  <table style="position: fixed; top: 65px; left: 469.983px; visibility: hidden; width: 544px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 85.8666px; display: table-cell;">vitae</th>
+        <th style="width: 65.8666px; display: table-cell;">lacus</th>
+        <th style="width: 94.8666px; display: table-cell;">lorem</th>
+        <th style="width: 95.8666px; display: table-cell;">dignissim</th>
+        <th style="width: 90.8666px; display: table-cell;">tincidunt</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table condensed-table">
+  <thead>
+    <tr>
+      <th>vitae</th>
+      <th>lacus</th>
+      <th>lorem</th>
+      <th>dignissim</th>
+      <th>tincidunt</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>convallis</td>
+        <td>sit</td>
+        <td>felis</td>
+        <td>viverra</td>
+        <td>dignissim</td>
+      </tr>
+       <tr class="even">
+        <td>porta</td>
+        <td>enim</td>
+        <td>elementum</td>
+        <td>vestibulum</td>
+        <td>lacinia</td>
+      </tr>
+       <tr class="odd">
+        <td>viverra</td>
+        <td>ante</td>
+        <td>orci</td>
+        <td>velit</td>
+        <td>orci</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>Bordered</h2>
+  <table style="position: fixed; top: 65px; left: 469.983px; visibility: hidden; width: 544px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 85.8666px; display: table-cell;">vitae</th>
+        <th style="width: 65.8666px; display: table-cell;">lacus</th>
+        <th style="width: 94.8666px; display: table-cell;">lorem</th>
+        <th style="width: 95.8666px; display: table-cell;">dignissim</th>
+        <th style="width: 90.8666px; display: table-cell;">tincidunt</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table bordered-table">
+  <thead>
+    <tr>
+      <th>vitae</th>
+      <th>lacus</th>
+      <th>lorem</th>
+      <th>dignissim</th>
+      <th>tincidunt</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>convallis</td>
+        <td>sit</td>
+        <td>felis</td>
+        <td>viverra</td>
+        <td>dignissim</td>
+      </tr>
+      <tr class="even">
+        <td>porta</td>
+        <td>enim</td>
+        <td>elementum</td>
+        <td>vestibulum</td>
+        <td>lacinia</td>
+      </tr>
+      <tr class="odd">
+        <td>viverra</td>
+        <td>ante</td>
+        <td>orci</td>
+        <td>velit</td>
+        <td>orci</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>Zebra</h2>
+  <table style="position: fixed; top: 65px; left: 469.983px; visibility: hidden; width: 544px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 85.8666px; display: table-cell;">vitae</th>
+        <th style="width: 65.8666px; display: table-cell;">lacus</th>
+        <th style="width: 94.8666px; display: table-cell;">lorem</th>
+        <th style="width: 95.8666px; display: table-cell;">dignissim</th>
+        <th style="width: 90.8666px; display: table-cell;">tincidunt</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table zebra-striped">
+  <thead>
+    <tr>
+      <th>vitae</th>
+      <th>lacus</th>
+      <th>lorem</th>
+      <th>dignissim</th>
+      <th>tincidunt</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>convallis</td>
+        <td>sit</td>
+        <td>felis</td>
+        <td>viverra</td>
+        <td>dignissim</td>
+      </tr>
+      <tr class="even">
+        <td>porta</td>
+        <td>enim</td>
+        <td>elementum</td>
+        <td>vestibulum</td>
+        <td>lacinia</td>
+      </tr>
+      <tr class="odd">
+        <td>viverra</td>
+        <td>ante</td>
+        <td>orci</td>
+        <td>velit</td>
+        <td>orci</td>
+      </tr>
+      <tr class="even">
+        <td>viverra</td>
+        <td>ante</td>
+        <td>orci</td>
+        <td>velit</td>
+        <td>orci</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>All in One Combo</h2>
+  <table style="position: fixed; top: 65px; left: 469.983px; visibility: hidden; width: 544px;" class="sticky-header">
+    <thead style="display: block;">
+      <tr>
+        <th style="width: 85.8666px; display: table-cell;">vitae</th>
+        <th style="width: 65.8666px; display: table-cell;">lacus</th>
+        <th style="width: 94.8666px; display: table-cell;">lorem</th>
+        <th style="width: 95.8666px; display: table-cell;">dignissim</th>
+        <th style="width: 90.8666px; display: table-cell;">tincidunt</th>
+      </tr>
+    </thead>
+  </table>
+  <table class="sticky-enabled tableheader-processed sticky-table zebra-striped bordered-table condensed-table zebra-striped">
+  <thead>
+    <tr>
+      <th>vitae</th>
+      <th>lacus</th>
+      <th>lorem</th>
+      <th>dignissim</th>
+      <th>tincidunt</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>convallis</td>
+        <td>sit</td>
+        <td>felis</td>
+        <td>viverra</td>
+        <td>dignissim</td>
+      </tr>
+      <tr class="even">
+        <td>porta</td>
+        <td>enim</td>
+        <td>elementum</td>
+        <td>vestibulum</td>
+        <td>lacinia</td>
+      </tr>
+      <tr class="odd">
+        <td>viverra</td>
+        <td>ante</td>
+        <td>orci</td>
+        <td>velit</td>
+        <td>orci</td>
+      </tr>
+      <tr class="even">
+        <td>viverra</td>
+        <td>ante</td>
+        <td>orci</td>
+        <td>velit</td>
+        <td>orci</td>
+      </tr>
+    </tbody>
+  </table>  
+</section>
+
+<section class="g-all-row">
+  <h1>Forms</h1>
+  <div class="g-all-c6 g-hl-c12 g-h-c12">
+    <h2>Horizontal Forms</h2>
+    <form accept-charset="UTF-8" id="styleguide-form" method="post" action="/admin/appearance/styleguide" enctype="multipart/form-data">
+      <div>
+        <div class="form-item form-type-select form-item-select">
+    <label for="edit-select">Select </label>
+    <select class="form-select" name="select" id="edit-select">
+      <option value="amet">amet</option>
+      <option value="luctus">luctus</option>
+      <option value="et">et</option>
+      <option value="ipsum">ipsum</option>
+      <option value="lobortis">lobortis</option>
+    </select>
+    <div class="description">Phasellus ac eleifend magna.</div>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkbox">
+    <input type="checkbox" class="form-checkbox" checked="checked" value="1" name="checkbox" id="edit-checkbox">
+    <label for="edit-checkbox" class="option">Checkbox </label>
+
+    <div class="description">Cras vestibulum lacus sit amet sem commodo ullamcorper aliquet eros vestibulum.</div>
+    </div>
+    <div class="form-item form-type-checkboxes form-item-checkboxes">
+    <label for="edit-checkboxes">Checkboxes </label>
+    <div class="form-checkboxes" id="edit-checkboxes">
+      <div class="form-item form-type-checkbox form-item-checkboxes-amet">
+      <input type="checkbox" class="form-checkbox" value="amet" name="checkboxes[amet]" id="edit-checkboxes-amet">
+      <label for="edit-checkboxes-amet" class="option">amet </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-luctus">
+      <input type="checkbox" class="form-checkbox" value="luctus" name="checkboxes[luctus]" id="edit-checkboxes-luctus">
+      <label for="edit-checkboxes-luctus" class="option">luctus </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-et">
+      <input type="checkbox" class="form-checkbox" value="et" name="checkboxes[et]" id="edit-checkboxes-et">
+      <label for="edit-checkboxes-et" class="option">et </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-ipsum">
+      <input type="checkbox" class="form-checkbox" value="ipsum" name="checkboxes[ipsum]" id="edit-checkboxes-ipsum">
+      <label for="edit-checkboxes-ipsum" class="option">ipsum </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-lobortis">
+      <input type="checkbox" class="form-checkbox" value="lobortis" name="checkboxes[lobortis]" id="edit-checkboxes-lobortis">
+      <label for="edit-checkboxes-lobortis" class="option">lobortis </label>
+    </div>
+  </div>
+  <div class="description">Sed nec lacus sed nibh iaculis luctus.</div>
+  </div>
+
+  <div class="form-item form-type-radios form-item-radios">
+    <label for="edit-radios">Radios </label>
+  <div class="form-radios" id="edit-radios"><div class="form-item form-type-radio form-item-radios">
+  <input type="radio" class="form-radio" value="amet" name="radios" id="edit-radios-amet">  <label for="edit-radios-amet" class="option">amet </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="luctus" name="radios" id="edit-radios-luctus">  <label for="edit-radios-luctus" class="option">luctus </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="et" name="radios" id="edit-radios-et">  <label for="edit-radios-et" class="option">et </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="ipsum" name="radios" id="edit-radios-ipsum">  <label for="edit-radios-ipsum" class="option">ipsum </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="lobortis" name="radios" id="edit-radios-lobortis">
+    <label for="edit-radios-lobortis" class="option">lobortis </label>
+  </div>
+</div>
+<div class="description">Etiam quis elit vel est suscipit tristique.</div>
+</div>
+
+<div class="form-item form-type-textfield form-item-textfield">
+  <label for="edit-textfield">Textfield </label>
+    <input type="text" class="form-text" maxlength="128" size="40" value="pellentesque" name="textfield" id="edit-textfield">
+<div class="description">Nam tincidunt dictum molestie.</div>
+</div>
+
+<div class="form-item form-type-textfield form-item-autocomplete" role="application">
+  <label for="edit-autocomplete">Autocomplete textfield </label>
+ <input type="text" class="form-text form-autocomplete" maxlength="128" size="40" value="enim" name="autocomplete" id="edit-autocomplete" autocomplete="OFF" aria-autocomplete="list"><input type="hidden" class="autocomplete autocomplete-processed" disabled="disabled" value="http://d7.kgbdev.local/user/autocomplete" id="edit-autocomplete-autocomplete">
+<div class="description">Curabitur dapibus odio quis enim hendrerit eu placerat lorem accumsan.</div>
+<span aria-live="assertive" class="element-invisible" id="edit-autocomplete-autocomplete-aria-live"></span></div>
+<div class="form-item form-type-textfield form-item-textfield-machine">
+  <label for="edit-textfield-machine">Textfield, with machine name </label>
+ <input type="text" class="form-text machine-name-source" maxlength="128" size="40" value="massa lorem amet" name="textfield-machine" id="edit-textfield-machine"> <span class="field-suffix"> <small id="edit-textfield-machine-machine-name-suffix"> <span class="machine-name-label">Machine name:</span> <span class="machine-name-value">erat_sit_nec</span> <span class="admin-link"><a href="#">Edit</a></span></small></span>
+<div class="description">Integer quis dui tellus.</div>
+</div>
+<div class="form-item form-type-machine-name form-item-machine-name" style="display: none;">
+  <label for="edit-machine-name">Machine name <span title="This field is required." class="form-required">*</span></label>
+ <span class="field-prefix"></span> <input type="text" class="form-text required machine-name-target" maxlength="64" size="40" value="" name="machine_name" id="edit-machine-name" dir="ltr"> <span class="field-suffix"></span>
+<div class="description">Duis urna libero, tempus non mattis a, convallis ac erat.</div>
+</div>
+<div class="form-item form-type-textarea form-item-textarea">
+  <label for="edit-textarea">Textarea </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="form-textarea" rows="5" cols="40" name="textarea" id="edit-textarea">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam iaculis, velit gravida convallis tincidunt, felis enim venenatis lorem, nec lobortis nisl urna et mi. Pellentesque ac dictum ante. Fusce dignissim tempor elementum. Ut dignissim convallis eros, viverra luctus lacus consequat ac. Sed feugiat velit sed magna aliquam accumsan. Nam vitae porta tortor. Nam auctor dui a neque iaculis in aliquam erat viverra. Duis orci nunc, lacinia in malesuada et, euismod id turpis. Cras mattis vulputate erat, eget tempor magna egestas eu. Vestibulum sit amet massa est.&lt;/p&gt;&lt;p&gt;Vivamus pretium placerat lorem, in tempor massa convallis sit amet. Aliquam sed quam eget ligula luctus aliquam sed vitae nulla. &lt;/p&gt;</textarea><div class="grippie"></div></div>
+<div class="description">Quisque a velit diam.</div>
+</div>
+<div class="form-item form-type-date form-item-date">
+  <label for="edit-date">Date </label>
+ <div class="container-inline" id="edit-date"><div class="form-item form-type-select form-item-date-month">
+  <label for="edit-date-month" class="element-invisible">Month </label>
+ <select class="form-select" name="date[month]" id="edit-date-month"><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option selected="selected" value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
+</div>
+<div class="form-item form-type-select form-item-date-day">
+  <label for="edit-date-day" class="element-invisible">Day </label>
+ <select class="form-select" name="date[day]" id="edit-date-day"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option selected="selected" value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+</div>
+<div class="form-item form-type-select form-item-date-year">
+  <label for="edit-date-year" class="element-invisible">Year </label>
+ <select class="form-select" name="date[year]" id="edit-date-year"><option value="1900">1900</option><option value="1901">1901</option><option value="1902">1902</option><option value="1903">1903</option><option value="1904">1904</option><option value="1905">1905</option><option value="1906">1906</option><option value="1907">1907</option><option value="1908">1908</option><option value="1909">1909</option><option value="1910">1910</option><option value="1911">1911</option><option value="1912">1912</option><option value="1913">1913</option><option value="1914">1914</option><option value="1915">1915</option><option value="1916">1916</option><option value="1917">1917</option><option value="1918">1918</option><option value="1919">1919</option><option value="1920">1920</option><option value="1921">1921</option><option value="1922">1922</option><option value="1923">1923</option><option value="1924">1924</option><option value="1925">1925</option><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option></select>
+</div>
+</div>
+<div class="description">Suspendisse potenti.</div>
+</div>
+<div class="form-item form-type-file form-item-files-file">
+  <label for="edit-file">File </label>
+ <input type="file" class="form-file" size="22" name="files[file]" id="edit-file">
+<div class="description">In faucibus feugiat urna sit amet elementum.</div>
+</div>
+<div id="edit-managed-file-ajax-wrapper"><div class="form-item form-type-managed-file form-item-managed-file">
+  <label for="edit-managed-file">Managed file </label>
+ <div class="form-managed-file" id="edit-managed-file"><input type="file" class="form-file" size="22" name="files[managed_file]" id="edit-managed-file-upload"><input type="submit" class="form-submit ajax-processed" value="Upload" name="managed_file_upload_button" id="edit-managed-file-upload-button"><input type="hidden" value="0" name="managed_file[fid]">
+</div>
+<div class="description">Sed fermentum nulla quis risus suscipit dapibus.</div>
+</div>
+</div><div class="form-item form-type-password form-item-password">
+  <label for="edit-password">Password </label>
+ <input type="password" class="form-text" maxlength="128" size="40" name="password" id="edit-password">
+<div class="description">Maecenas quis odio leo, a auctor lorem.</div>
+</div>
+<div class="form-item form-type-password-confirm form-item-password-confirm">
+  <label for="edit-password-confirm">Password confirm </label>
+ <div class="form-item form-type-password form-item-password-confirm-pass1 password-parent"><div class="password-strength"><div aria-live="assertive" class="password-strength-text"></div><div class="password-indicator"><div class="indicator"></div></div></div>
+  <label for="edit-password-confirm-pass1">Password </label>
+ <input type="password" maxlength="128" size="40" name="password_confirm[pass1]" id="edit-password-confirm-pass1" class="password-field form-text password-processed">
+</div>
+<div class="form-item form-type-password form-item-password-confirm-pass2 confirm-parent">
+  <label for="edit-password-confirm-pass2">Confirm password </label>
+ <input type="password" maxlength="128" size="40" name="password_confirm[pass2]" id="edit-password-confirm-pass2" class="password-confirm form-text">
+</div><div class="password-suggestions description" style="display: none;"></div>
+
+</div>
+<div class="form-item form-type-select form-item-weight">
+  <label for="edit-weight">Weight </label>
+ <select class="form-select" name="weight" id="edit-weight"><option value="-10">-10</option><option value="-9">-9</option><option value="-8">-8</option><option value="-7">-7</option><option value="-6">-6</option><option value="-5">-5</option><option value="-4">-4</option><option value="-3">-3</option><option value="-2">-2</option><option value="-1">-1</option><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+<div class="description">Phasellus sagittis, orci vel laoreet molestie, urna orci imperdiet elit, quis ultricies orci mauris vel ante.</div>
+</div>
+</div></form>
+  </div>
+
+
+  <div class="g-all-c6 g-all-l g-hl-c12 g-h-c12">
+    <h2>Horizontal Forms</h2>
+    <form accept-charset="UTF-8" id="styleguide-form" class="form-horizontal" method="post" action="/admin/appearance/styleguide" enctype="multipart/form-data">
+      <div>
+        <div class="form-item form-type-select form-item-select">
+    <label for="edit-select">Select </label>
+    <select class="form-select" name="select" id="edit-select">
+      <option value="amet">amet</option>
+      <option value="luctus">luctus</option>
+      <option value="et">et</option>
+      <option value="ipsum">ipsum</option>
+      <option value="lobortis">lobortis</option>
+    </select>
+    <div class="description">Phasellus ac eleifend magna.</div>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkbox">
+    <input type="checkbox" class="form-checkbox" checked="checked" value="1" name="checkbox" id="edit-checkbox">
+    <label for="edit-checkbox" class="option">Checkbox </label>
+
+    <div class="description">Cras vestibulum lacus sit amet sem commodo ullamcorper aliquet eros vestibulum.</div>
+    </div>
+    <div class="form-item form-type-checkboxes form-item-checkboxes">
+    <label for="edit-checkboxes">Checkboxes </label>
+    <div class="form-checkboxes" id="edit-checkboxes">
+      <div class="form-item form-type-checkbox form-item-checkboxes-amet">
+      <input type="checkbox" class="form-checkbox" value="amet" name="checkboxes[amet]" id="edit-checkboxes-amet">
+      <label for="edit-checkboxes-amet" class="option">amet </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-luctus">
+      <input type="checkbox" class="form-checkbox" value="luctus" name="checkboxes[luctus]" id="edit-checkboxes-luctus">
+      <label for="edit-checkboxes-luctus" class="option">luctus </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-et">
+      <input type="checkbox" class="form-checkbox" value="et" name="checkboxes[et]" id="edit-checkboxes-et">
+      <label for="edit-checkboxes-et" class="option">et </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-ipsum">
+      <input type="checkbox" class="form-checkbox" value="ipsum" name="checkboxes[ipsum]" id="edit-checkboxes-ipsum">
+      <label for="edit-checkboxes-ipsum" class="option">ipsum </label>
+    </div>
+    <div class="form-item form-type-checkbox form-item-checkboxes-lobortis">
+      <input type="checkbox" class="form-checkbox" value="lobortis" name="checkboxes[lobortis]" id="edit-checkboxes-lobortis">
+      <label for="edit-checkboxes-lobortis" class="option">lobortis </label>
+    </div>
+  </div>
+  <div class="description">Sed nec lacus sed nibh iaculis luctus.</div>
+  </div>
+
+  <div class="form-item form-type-radios form-item-radios">
+    <label for="edit-radios">Radios </label>
+  <div class="form-radios" id="edit-radios"><div class="form-item form-type-radio form-item-radios">
+  <input type="radio" class="form-radio" value="amet" name="radios" id="edit-radios-amet">  <label for="edit-radios-amet" class="option">amet </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="luctus" name="radios" id="edit-radios-luctus">  <label for="edit-radios-luctus" class="option">luctus </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="et" name="radios" id="edit-radios-et">  <label for="edit-radios-et" class="option">et </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="ipsum" name="radios" id="edit-radios-ipsum">  <label for="edit-radios-ipsum" class="option">ipsum </label>
+  </div>
+
+  <div class="form-item form-type-radio form-item-radios">
+    <input type="radio" class="form-radio" value="lobortis" name="radios" id="edit-radios-lobortis">
+    <label for="edit-radios-lobortis" class="option">lobortis </label>
+  </div>
+</div>
+<div class="description">Etiam quis elit vel est suscipit tristique.</div>
+</div>
+
+<div class="form-item form-type-textfield form-item-textfield">
+  <label for="edit-textfield">Textfield </label>
+    <input type="text" class="form-text" maxlength="128" size="40" value="pellentesque" name="textfield" id="edit-textfield">
+<div class="description">Nam tincidunt dictum molestie.</div>
+</div>
+
+<div class="form-item form-type-textfield form-item-autocomplete" role="application">
+  <label for="edit-autocomplete">Autocomplete textfield </label>
+ <input type="text" class="form-text form-autocomplete" maxlength="128" size="40" value="enim" name="autocomplete" id="edit-autocomplete" autocomplete="OFF" aria-autocomplete="list"><input type="hidden" class="autocomplete autocomplete-processed" disabled="disabled" value="http://d7.kgbdev.local/user/autocomplete" id="edit-autocomplete-autocomplete">
+<div class="description">Curabitur dapibus odio quis enim hendrerit eu placerat lorem accumsan.</div>
+<span aria-live="assertive" class="element-invisible" id="edit-autocomplete-autocomplete-aria-live"></span></div>
+<div class="form-item form-type-textfield form-item-textfield-machine">
+  <label for="edit-textfield-machine">Textfield, with machine name </label>
+ <input type="text" class="form-text machine-name-source" maxlength="128" size="40" value="massa lorem amet" name="textfield-machine" id="edit-textfield-machine"> <span class="field-suffix"> <small id="edit-textfield-machine-machine-name-suffix"> <span class="machine-name-label">Machine name:</span> <span class="machine-name-value">erat_sit_nec</span> <span class="admin-link"><a href="#">Edit</a></span></small></span>
+<div class="description">Integer quis dui tellus.</div>
+</div>
+<div class="form-item form-type-machine-name form-item-machine-name" style="display: none;">
+  <label for="edit-machine-name">Machine name <span title="This field is required." class="form-required">*</span></label>
+ <span class="field-prefix"></span> <input type="text" class="form-text required machine-name-target" maxlength="64" size="40" value="" name="machine_name" id="edit-machine-name" dir="ltr"> <span class="field-suffix"></span>
+<div class="description">Duis urna libero, tempus non mattis a, convallis ac erat.</div>
+</div>
+<div class="form-item form-type-textarea form-item-textarea">
+  <label for="edit-textarea">Textarea </label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="form-textarea" rows="5" cols="40" name="textarea" id="edit-textarea">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam iaculis, velit gravida convallis tincidunt, felis enim venenatis lorem, nec lobortis nisl urna et mi. Pellentesque ac dictum ante. Fusce dignissim tempor elementum. Ut dignissim convallis eros, viverra luctus lacus consequat ac. Sed feugiat velit sed magna aliquam accumsan. Nam vitae porta tortor. Nam auctor dui a neque iaculis in aliquam erat viverra. Duis orci nunc, lacinia in malesuada et, euismod id turpis. Cras mattis vulputate erat, eget tempor magna egestas eu. Vestibulum sit amet massa est.&lt;/p&gt;&lt;p&gt;Vivamus pretium placerat lorem, in tempor massa convallis sit amet. Aliquam sed quam eget ligula luctus aliquam sed vitae nulla. &lt;/p&gt;</textarea><div class="grippie"></div></div>
+<div class="description">Quisque a velit diam.</div>
+</div>
+<div class="form-item form-type-date form-item-date">
+  <label for="edit-date">Date </label>
+ <div class="container-inline" id="edit-date"><div class="form-item form-type-select form-item-date-month">
+  <label for="edit-date-month" class="element-invisible">Month </label>
+ <select class="form-select" name="date[month]" id="edit-date-month"><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option selected="selected" value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>
+</div>
+<div class="form-item form-type-select form-item-date-day">
+  <label for="edit-date-day" class="element-invisible">Day </label>
+ <select class="form-select" name="date[day]" id="edit-date-day"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option selected="selected" value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+</div>
+<div class="form-item form-type-select form-item-date-year">
+  <label for="edit-date-year" class="element-invisible">Year </label>
+ <select class="form-select" name="date[year]" id="edit-date-year"><option value="1900">1900</option><option value="1901">1901</option><option value="1902">1902</option><option value="1903">1903</option><option value="1904">1904</option><option value="1905">1905</option><option value="1906">1906</option><option value="1907">1907</option><option value="1908">1908</option><option value="1909">1909</option><option value="1910">1910</option><option value="1911">1911</option><option value="1912">1912</option><option value="1913">1913</option><option value="1914">1914</option><option value="1915">1915</option><option value="1916">1916</option><option value="1917">1917</option><option value="1918">1918</option><option value="1919">1919</option><option value="1920">1920</option><option value="1921">1921</option><option value="1922">1922</option><option value="1923">1923</option><option value="1924">1924</option><option value="1925">1925</option><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option></select>
+</div>
+</div>
+<div class="description">Suspendisse potenti.</div>
+</div>
+<div class="form-item form-type-file form-item-files-file">
+  <label for="edit-file">File </label>
+ <input type="file" class="form-file" size="22" name="files[file]" id="edit-file">
+<div class="description">In faucibus feugiat urna sit amet elementum.</div>
+</div>
+<div id="edit-managed-file-ajax-wrapper"><div class="form-item form-type-managed-file form-item-managed-file">
+  <label for="edit-managed-file">Managed file </label>
+ <div class="form-managed-file" id="edit-managed-file"><input type="file" class="form-file" size="22" name="files[managed_file]" id="edit-managed-file-upload"><input type="submit" class="form-submit ajax-processed" value="Upload" name="managed_file_upload_button" id="edit-managed-file-upload-button"><input type="hidden" value="0" name="managed_file[fid]">
+</div>
+<div class="description">Sed fermentum nulla quis risus suscipit dapibus.</div>
+</div>
+</div><div class="form-item form-type-password form-item-password">
+  <label for="edit-password">Password </label>
+ <input type="password" class="form-text" maxlength="128" size="40" name="password" id="edit-password">
+<div class="description">Maecenas quis odio leo, a auctor lorem.</div>
+</div>
+<div class="form-item form-type-password-confirm form-item-password-confirm">
+  <label for="edit-password-confirm">Password confirm </label>
+ <div class="form-item form-type-password form-item-password-confirm-pass1 password-parent"><div class="password-strength"><div aria-live="assertive" class="password-strength-text"></div><div class="password-indicator"><div class="indicator"></div></div></div>
+  <label for="edit-password-confirm-pass1">Password </label>
+ <input type="password" maxlength="128" size="40" name="password_confirm[pass1]" id="edit-password-confirm-pass1" class="password-field form-text password-processed">
+</div>
+<div class="form-item form-type-password form-item-password-confirm-pass2 confirm-parent">
+  <label for="edit-password-confirm-pass2">Confirm password </label>
+ <input type="password" maxlength="128" size="40" name="password_confirm[pass2]" id="edit-password-confirm-pass2" class="password-confirm form-text">
+</div><div class="password-suggestions description" style="display: none;"></div>
+
+</div>
+<div class="form-item form-type-select form-item-weight">
+  <label for="edit-weight">Weight </label>
+ <select class="form-select" name="weight" id="edit-weight"><option value="-10">-10</option><option value="-9">-9</option><option value="-8">-8</option><option value="-7">-7</option><option value="-6">-6</option><option value="-5">-5</option><option value="-4">-4</option><option value="-3">-3</option><option value="-2">-2</option><option value="-1">-1</option><option selected="selected" value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+<div class="description">Phasellus sagittis, orci vel laoreet molestie, urna orci imperdiet elit, quis ultricies orci mauris vel ante.</div>
+</div>
+</div></form>
+  </div>  
+</section>
+
+<h3>Inline Forms</h3>
+Use <code>.login-inline</code> for an inline login block. 
+<section role="form" class="block block-user inline-login first last block-odd clearfix" id="block-user-login">
+  <div class="block-inner">
+    <div class="content">
+      <form accept-charset="UTF-8" id="user-login-form" method="post" action="/node?destination=node"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Username <span title="This field is required." class="form-required">*</span></label>
+ <input type="text" class="form-text required" maxlength="40" size="15" value="" name="name" id="edit-name" placeholder="Username">
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Password <span title="This field is required." class="form-required">*</span></label>
+ <input type="password" class="form-text required" maxlength="40" size="15" name="pass" id="edit-pass" placeholder="Password">
+</div>
+<input type="hidden" value="form-o_MWkC1J943wAYz5b5Z5sTIrIwbpfrcTBtvCpxblojo" name="form_build_id">
+<input type="hidden" value="user_login_block" name="form_id">
+<div id="edit-actions" class="form-actions form-wrapper"><input type="submit" class="form-submit" value="Log in" name="op" id="edit-submit"></div><div class="item-list"><ul><li class="first last"><a title="If you forgot your password, click to request a new password via e-mail." href="/user/password">Forgot password?</a></li>
+</ul></div></div></form>    </div>
+
+  </div>
+</section>
+
+</section>
+
+  </div>
+
+    <footer class="g-all-row">
+      <p>Aether Framework 2012</p>
+    </footer>
+  </div>
+
+</body>
+</html>

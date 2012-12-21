@@ -1,0 +1,20 @@
+@import "../variables";
+@import "grid-classes";
+
+html { 
+  overflow:auto; 
+  overflow-x:hidden;
+}
+
+$aether-break: $break-wide;
+$aether-grid-numbers-top: 110px;
+$aether-constraint: max;
+$aether-grid-type: fixed;
+$aether-columns: $aether-columns-desktop;
+$aether-grid-width: $aether-grid-width-desktop;
+$aether-media: $aether-media-desktop;
+
+@include aether-grid-classes;
+
+// The extend-layout partial must be imported into both default layout and media queries stylesheets
+@import "extend-layout";

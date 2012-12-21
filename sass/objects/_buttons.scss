@@ -1,0 +1,25 @@
+.form-submit[type="submit"] {
+  margin-right: 0.3em; // Adds space between buttons
+  @include aether-button("shiny", 4px, $font-size-sm, $button-color-2, $text-color: #222, $padding: 0.64em 1em);
+  font-family: $button-font-family;
+}
+
+// IE7
+@if $legacy-support-for-ie7 {
+  .ie7 {
+    .form-submit[type="submit"] {
+      padding: 0.54em 0.5em;
+    }
+  }
+}
+
+// Makes browse button more accessable.
+input[type="file"] {
+  height: 28px;
+  line-height: 28px;
+}
+
+// Add space after browse button.
+.form-managed-file .form-file {
+    margin-right: 0.3em;
+}

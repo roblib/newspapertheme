@@ -1,0 +1,12 @@
+// Base mixins, variables, functions & page structure
+// Base files should produce no css
+@import "variables";
+
+// Base normalize
+@import "common/rtl/normalize-rtl";
+
+// components, patterns and page partials
+@import "html-base/rtl/tables-rtl";
+@import "objects/rtl/tabs-rtl";
+@import "objects/rtl/navigation-rtl";
+@import "objects/rtl/page-rtl";

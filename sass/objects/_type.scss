@@ -1,0 +1,100 @@
+/*
+ * ==================================================
+ * Typography
+ * ==================================================
+ */
+
+// To achieve a pleasant vertical rhythm, we use Compass' Vertical Rhythm mixins
+// so that the line height of our base font becomes the basic unit of vertical
+// measurement. We use multiples of that unit to set the top and bottom margins
+// for our block level elements and to set the line heights of any fonts.
+// For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+
+// ---------------------------------------------------------------------------
+// Local mixins are documented in utilities.scss, the rest are Compass mixins.
+// Look here for the Compass mixin docs http://compass-style.org/index/mixins/
+// ---------------------------------------------------------------------------
+
+/* Responsive Typography */
+
+// Read Trent Walton's blog on fluid type http://trentwalton.com/
+// "Anything from 45 to 75 characters is widely regarded as a satisfactory
+// length of line for a single-column" ~
+// http://www.webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/
+
+//html {
+//  @include breakpoint($break-desktop){
+//    font-size: 145%;
+//  }
+//  @include breakpoint($break-tablet-landscape){
+//    font-size: 120%;
+//  }
+//  @include breakpoint($break-tablet){
+//    font-size: 98%;
+//  }
+//  @include breakpoint($break-handheld-landscape){
+//    font-size: 95%;
+//  }
+//  @include breakpoint($break-handheld){
+//    font-size: 92%;
+//  }
+//}
+
+html {
+  font-family: $text-font-family;
+}
+
+// Font Stacks
+//@include font-face-family(DroidSansRegular, DroidSans);
+
+// Modify the selected text color, accepts $color, $background
+@include selection($select-text-color, $text-select-background);
+
+// Thematic break
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  padding-bottom: -1px;
+  margin: rhythm(1) 0;
+}
+
+/* Abbreviations */
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+  white-space: nowrap;
+}
+
+/* Marked/inserted/deleted text */
+
+mark {
+  background: $text-marked;
+}
+
+ins {
+  background: $text-inserted;
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+/* Others */
+
+strong,
+b,
+dt {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+var,
+address {
+  font-style: normal;
+}

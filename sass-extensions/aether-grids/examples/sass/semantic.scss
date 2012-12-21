@@ -1,0 +1,45 @@
+@import 'base';
+
+$aether-grid-type: fluid;
+$aether-columns: 12;
+$aether-grid-width: 1148px;
+$aether-include-grid-item-base: true;
+
+html { 
+  overflow:auto; 
+  overflow-x:hidden;
+}
+
+.main, #postscript, footer {
+  @include container($aether-break-wide, max);
+}
+
+.main {
+  .block1 {
+    @include span-columns(12);
+  }
+  .block2 {
+    @include span-columns(8);
+      .block2-1 {
+        @include span-columns(4,8);
+      }
+      .block2-2 {
+        @include span-columns(4,8, last);
+      }
+  }
+  .block3 {
+    @include span-columns(4, last right);
+  }
+}
+  
+#postscript {
+  .block1 {
+    @include span-columns(4, first);
+  }
+  .block2 {
+    @include span-columns(4);
+  }
+   .block3 {
+    @include span-columns(4, last);
+  }
+}

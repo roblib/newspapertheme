@@ -1,0 +1,60 @@
+// Mixin that does all the border magic
+@import "text";
+@import "shadows";
+
+@mixin aether-form-border-style($style: "flat", $base-color: $af-base-color, $second-color: false, $third-color: false, $glow-color: false, $text-color: $sf-text-color, $text-style: $sf-text-style, $auto-states: $sf-pseudo-states, $ie: $sf-ie-support) {
+  $first-color: $base-color;
+  @if $second-color == false {
+    $second-color: $base-color;
+  }
+  @if $third-color == false {
+    $third-color: $base-color;
+  }
+  // user a simple filter gradient if $sf-ie-support is true
+  @if $ie {
+    @include filter-gradient($first-color, darken($first-color, 20%));
+  }
+  @else {
+    background-color: $base-color;
+  }
+  // Standard form output
+  @if $style == "innerborder" {
+    background-color: $base-color;
+    @include aether-form-inner-shadow($first-color);
+    border: 1px solid darken($base-color, 25%);
+    @if $auto-states {
+      @include aether-form-pseudo-states($base-color, $second-color, $third-color, $glow-color, $style);
+    }
+  }
+  // Standard form output
+  @if $style == "standard" {
+    background-color: $base-color;
+    @include aether-form-highlight-shadow($first-color);
+    border-color: darken($second-color, 35%) darken($second-color, 30%) darken($second-color, 25%);
+    border-style: solid;
+    border-width: 1px;
+    @if $auto-states {
+      @include aether-form-pseudo-states($base-color, $second-color, $third-color, $glow-color, $style);
+    }
+  }
+  // Simple single border style
+  @if $style == "simple" {
+    background-color: $base-color;
+    border: 1px solid darken($second-color, 25%);
+    @if $auto-states {
+      @include aether-form-pseudo-states($base-color, $second-color, $third-color, $glow-color, $style);
+    }
+  }
+  // Flat Style
+  @if $style == "flat" {
+    background-color: $base-color;
+    border: 0;
+    @if $auto-states {
+      @include aether-form-pseudo-states($base-color, false, false, false, $style);
+    }
+  }
+  // Apply Text Styles
+  @if $text-style {
+    @include aether-form-text-style($first-color, $second-color, $text-color, $text-style);
+  }
+}

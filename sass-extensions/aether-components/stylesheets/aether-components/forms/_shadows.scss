@@ -1,0 +1,17 @@
+// Mixins for shadows used in forms
+@mixin aether-form-highlight-shadow($base-color) {
+  @include box-shadow(darken($base-color, 8%) 0 1px 0 inset);
+}
+
+@mixin aether-form-inner-shadow($base-color) {
+  @include box-shadow(lighten($base-color, 25%) 0 0 1px inset);
+}
+
+@mixin aether-form-focus-shadow($glow-color) {
+  // Add blue glow.
+  @include box-shadow($glow-color 0 0 7px 0);
+//  @include transition-duration(0.4s);
+//  @include transition-timing-function(ease-in);
+  // for Opera
+  z-index: 1;
+}

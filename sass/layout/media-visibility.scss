@@ -1,0 +1,175 @@
+@import "../variables";
+/*
+ * ==================================================
+ * Media Visibility
+ * ==================================================
+ */
+
+/* These classes make it possible to display elements in only certain medias */
+.desktop-visible,
+.below-desktop-visible,
+.tablet-landscape-visible,
+.below-tablet-landscape-visible,
+.tablet-visible,
+.below-tablet-visible,
+.tablet-all-visible,
+.handheld-landscape-visible,
+.handheld-visible {
+  display: none;
+}
+
+/* Only handheld portrait */
+@include breakpoint($break-handheld) {
+  .desktop-visible,
+  .tablet-visible,
+  .tablet-landscape-visible,
+  .handheld-landscape-visible {
+    display: none !important;
+  }
+  .handheld-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.handheld-visible {
+      display: inline !important;
+    }
+  }
+}
+
+/* Only handheld landscape */
+@include breakpoint($break-handheld-landscape) {
+  .desktop-visible,
+  .tablet-visible,
+  .tablet-landscape-visible,
+  .handheld-visible {
+    display: none !important;
+  }
+  .handheld-landscape-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.handheld-landscape-visible {
+      display: inline !important;
+    }
+  }
+}
+
+/* Only tablet portrait */
+@include breakpoint($break-tablet) {
+  .desktop-visible,
+  .tablet-landscape-visible,
+  .handheld-landscape-visible,
+  .handheld-visible {
+    display: none !important;
+  }
+  .tablet-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.tablet-visible {
+      display: inline !important;
+    }
+  }
+}
+
+/* Only tablet landscape */
+@include breakpoint($break-tablet-landscape) {
+  .desktop-visible,
+  .tablet-visible,
+  .handheld-landscape-visible,
+  .handheld-visible {
+    display: none !important;
+  }
+  .tablet-landscape-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.tablet-landscape-visible {
+      display: inline !important;
+    }
+  }
+}
+
+/* Handhelds */
+@include breakpoint($break-handheld-all) {
+  .desktop-visible,
+  .tablet-landscape-visible,
+  .tablet-visible {
+    display: none !important;
+  }
+  .below-tablet-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.below-tablet-visible {
+      display: inline !important;
+    }
+  }
+}
+
+
+/* Only below tablet landscape */
+@include breakpoint(max-width $break-large) {
+  .desktop-visible,
+  .tablet-landscape-visible {
+    display: none !important;
+  }
+  .below-tablet-landscape-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.below-tablet-landscape-visible {
+      display: inline !important;
+    }
+  }
+}
+
+/* Only tablets */
+@include breakpoint($break-tablet-all) {
+  .desktop-visible,
+  .handheld-landscape-visible,
+  .handheld-visible {
+    display: none !important;
+  }
+  .tablet-all-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.tablet-all-visible {
+      display: inline !important;
+    }
+  }
+}
+
+/* Only widescreens */
+@include breakpoint(min-width $break-desktop) {
+  .tablet-visible,
+  .tablet-landscape-visible,
+  .handheld-landscape-visible,
+  .handheld-visible {
+    display: none !important;
+  }
+  .desktop-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.desktop-visible {
+      display: inline !important;
+    }
+  }
+}
+
+/* Only below widescreens */
+@include breakpoint(max-width $break-wide) {
+  .desktop-visible {
+    display: none !important;
+  }
+  .below-desktop-visible {
+    display: block !important;
+  }
+  #{elements-of-type(inline)} {
+    &.below-desktop-visible {
+      display: inline !important;
+    }
+  }
+}

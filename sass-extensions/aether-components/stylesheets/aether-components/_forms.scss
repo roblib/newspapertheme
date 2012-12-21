@@ -1,0 +1,87 @@
+// Sassy forms
+// Compass extension by Jared Hardy - http://www.jaredhardy.com
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import "compass/css3/images";
+
+@import "forms/border-styles";
+@import "forms/text";
+@import "forms/pseudo-states";
+
+// Sassy form defaults
+// These are the base defaults for the forms, if you are going to use similar forms on an entire site changing these
+// can save you some time by calling the sassy form mixin with less arguments.
+
+// Base color of form fields.
+$sf-base-color: white !default;
+
+// Optional secondary color for hover state.
+$sf-second-color: false !default;
+
+// Optional third color for focus state.
+$sf-third-color: false !default;
+
+// Optional color for focus glow, false for none.
+$sf-glow-color: #0066FF !default;
+
+// Optional color for HTML5 placeholder text
+$sf-placeholder-color: false !default;
+
+// Border radius of form.
+$sf-border-radius: 3px !default;
+
+// Padding that gives form structure.
+$sf-padding: 0.25em 2px !default;
+
+// Font size.
+$sf-font-size: 16px !default;
+
+// form font color.
+$sf-text-color: #222 !default;
+
+// Style of form text, can be "inset" or "raised" or false.
+$sf-text-style: "false" !default;
+
+// Style of borders, can be "flat", "simple", "standard", "innerborder".
+$sf-border-style: "simple" !default;
+
+// Automatically generate pseudo state styles.
+$sf-pseudo-states: true !default;
+
+// Add gradient png for IE 7+
+$sf-ie-support: true !default;
+
+// Mixin that gets included when calling the aether-form-structure
+// if you need any styles applied to all your sassy forms, add it here.
+@mixin aether-form-default-structure {
+  @include background-clip(padding-box);
+  -webkit-appearance: none;
+  vertical-align: middle;
+  outline: 0;
+  text-align: left;
+}
+
+// The Sassy form kitchen sink.
+@mixin aether-form($border-style: $sf-border-style, $border-radius: $sf-border-radius, $font-size: $sf-font-size, $first-color: $sf-base-color, $second-color: $sf-second-color, $third-color: $sf-third-color, $glow-color: $sf-glow-color, $text-color: $sf-text-color, $text-style: $sf-text-style, $auto-states: $sf-pseudo-states, $ie: $sf-ie-support) {
+  @include aether-form-structure($border-radius, $font-size, $sf-padding);
+  @include aether-form-border-style($border-style, $first-color, $second-color, $third-color, $glow-color, $text-color, $text-style, $auto-states, $ie);
+  @include aether-form-firefox-fix;
+}
+
+// Structure for a sassy form
+@mixin aether-form-structure($border-radius: $sf-border-radius, $font-size: $sf-font-size, $padding: $sf-padding) {
+  font-size: $font-size;
+  padding: $padding;
+  @include aether-form-default-structure;
+  @include border-radius($border-radius);
+}
+
+// Fix for the Firefox padding issue
+@mixin aether-form-firefox-fix {
+  &::-moz-focus-inner {
+    padding: 0 !important;
+    margin: -1px !important;
+  }
+}

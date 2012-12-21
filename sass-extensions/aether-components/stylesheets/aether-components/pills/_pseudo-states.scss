@@ -1,0 +1,44 @@
+// Mixin that generates :hover, :active, and :focus pseudo states
+
+@mixin aether-pill-hover($color: $ap-base-color, $color-hover: $ap-base-color-hover, $color-active: $ap-base-color-active, $dark-text: $ap-dark-text, $light-text: $ap-light-text) {
+  &:link,
+  &:visited {
+    @include transition(background-color 0.2s);
+    background-color: $color;
+    border-color: adjust-lightness($color, -4);
+    @if lightness($color) <= lightness(#999) {
+      @include single-text-shadow(#333, 1px, 1px, 0);
+      color: $light-text;
+    }
+    @else {
+      @include single-text-shadow(#fff, 1px, 1px, 0);
+      color: $dark-text;
+    }
+  }
+  &:hover,
+  &:focus {
+    background-color: $color-hover;
+    border-color: adjust-lightness($color-hover, -20);
+    @if lightness($color-hover) <= lightness(#c7c7c7) {
+      @include single-text-shadow(#333, 1px, 1px, 0);
+      color: $light-text;
+    }
+    @else {
+      @include single-text-shadow(#fff, 1px, 1px, 0);
+      color: $dark-text;
+    }
+  }
+  &.active,
+  &:active {
+    background-color: $color-active;
+    border-color: adjust-lightness($color, -95);
+    @if lightness($color-active) <= lightness(#999) {
+      @include single-text-shadow(#333, 1px, 1px, 0);
+      color: $light-text;
+    }
+    @else {
+      @include single-text-shadow(#fff, 1px, 1px, 0);
+      color: $dark-text;
+    }
+  }
+}

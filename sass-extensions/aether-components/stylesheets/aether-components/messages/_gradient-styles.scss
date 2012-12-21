@@ -1,0 +1,14 @@
+@mixin aether-message-gradient($base-color) {
+  $first-color: lighten($base-color,10%);
+  $second-color: $base-color;
+  @if $am-ie {
+    @include filter-gradient($first-color, darken($second-color, 20%));
+  } @else {
+    background-color: $base-color;
+  }
+  @include background(linear-gradient(color-stops($first-color, $second-color 70%)))
+}
+
+@mixin aether-message-gradient-custom($gradient-top: $am-gradient-top, $gradient-bottom: $am-gradient-bottom) {
+  @include background-image(linear-gradient($gradient-top, $gradient-bottom));
+}

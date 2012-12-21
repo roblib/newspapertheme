@@ -1,0 +1,16 @@
+@mixin aether-meter-color($meter-color: $apm-meter-color, $meter-left-radius: $apm-meter-left-radius, $meter-right-radius: $apm-meter-right-radius) {
+  @include border-left-radius($meter-left-radius);
+  @include border-right-radius($meter-right-radius);
+  background-color: $meter-color;
+  position: relative;
+  &:after {
+    @include background(linear-gradient(top, adjust-color(#fff, $lightness: 30%, $saturation: -18%, $alpha: -0.5), rgba(#fff, 0.1)));
+    @include border-left-radius($meter-left-radius);
+    @include border-right-radius($meter-right-radius);
+    content: "";
+    overflow: hidden;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 1;
+  }
+}
